@@ -1,0 +1,12 @@
+.SelectionEyes {
+  display: grid;
+  height: 200px;
+  width: 90%;
+  background: $color2;
+
+  .eyesContainer {
+    height: 100px;
+    width: 100px;
+    background: $color3;
+  }
+}

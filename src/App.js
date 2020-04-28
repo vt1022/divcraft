@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Character from './Character.js'
+import SelectionEyes from './SelectionEyes.js'
 import firebase from './firebase.js'
-import './App.css'
+import './style/style.css'
 
 class App extends Component {
   constructor() {
@@ -10,20 +11,6 @@ class App extends Component {
       characters: [],
       userCharacterName: "",
     }
-    // const charactersObject = {
-    //   "charId": key,
-    //   "charName": userCharacterName,
-    //   "head": headClass,
-    //   "hair": hairClass,
-    //     "hairLeft": hairLeftClass,
-    //     "hairRight": hairRightClass,
-    //   "eyes": eyeClass,
-    //     "eyeLeft": eyeLeftClass,
-    //     "eyeRight": eyeRightClass,
-    //   "nose": noseClass,
-    //   "mouth": mouthClass,
-    //   "body": bodyClass
-    // }
   }
 
   componentDidMount() {
@@ -32,12 +19,27 @@ class App extends Component {
       const data = result.val()
       const arrayOfClasses = []
       // set default character with classes
-      // for (let key in data) {
-      //   arrayOfClasses.push({"bookId": key, "bookName": data[key]})
-      //   this.setState({
-      //     books: arrayOfClasses
-      //   })
-      // }
+            // for (let key in data) {
+            //   // const charactersObject = {
+            //   //   "charId": key,
+            //   //   "charName": userCharacterName,
+            //   //   "head": headClass,
+            //   //   "hair": hairClass,
+            //   //     "hairLeft": hairLeftClass,
+            //   //     "hairRight": hairRightClass,
+            //   //   "eyes": eyeClass,
+            //   //     "eyeLeft": eyeLeftClass,
+            //   //     "eyeRight": eyeRightClass,
+            //   //   "nose": noseClass,
+            //   //   "mouth": mouthClass,
+            //   //   "body": bodyClass
+            //   // }
+            //   arrayOfClasses.push({"bookId": key, "bookName": data[key]})
+            //   this.setState({
+            //     books: arrayOfClasses
+            //   })
+            // }
+      console.log(data);
     })
   }
 
@@ -85,6 +87,7 @@ class App extends Component {
           mouth="mouth"
           body="body"
         />
+        <SelectionEyes />
       </div>
     );
   }
