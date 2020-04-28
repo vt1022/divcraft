@@ -2,14 +2,18 @@ import React, {Component} from 'react'
 
 class SelectionEyes extends Component {
   render() {
-    const eyes = ["eyes1", "eyes2", "eyes3", "eyes4", "eyes5"];
+    const {changeFeatureFunction, eyes} = this.props
     return(
       <div className="SelectionEyes">
         {
           eyes.map((eye)=> {
             return(
-              <button className="eyesContainer">
-                <div className={eye}></div>
+              <button key={eye} className="eyesButton" 
+                onClick={() => changeFeatureFunction("eyes", eye)} >
+                <div className={eye}>
+                  <div className="left"></div>
+                  <div className="right"></div>
+                </div>
               </button>
             )
           })

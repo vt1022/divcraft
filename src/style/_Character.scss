@@ -89,15 +89,16 @@ body {background: #333;}
   transform: rotate(90deg);
 }
 
-.eyes {
+%eyes {
   position: absolute;
 	top: 23%;
 	width: 100%;
 	z-index: 3;
 }
 
-.eyes .left,
-.eyes .right {
+.eyes1 .left,
+.eyes1 .right {
+  @extend %eyes;
   position: absolute;
 	height: 40px;
   width: 40px;
@@ -108,13 +109,13 @@ body {background: #333;}
   left: 16%;
 }
 
-.eyes .right {
+.eyes1 .right {
   left: initial;
   right: 16%;
 }
 
-.eyes .left::before,
-.eyes .right::before {
+.eyes1 .left::before,
+.eyes1 .right::before {
   content: '';
   position: absolute;
   top: 70%;
@@ -123,6 +124,24 @@ body {background: #333;}
   width: 3px;
   background: #2a2a2a;
   transform: translateX(-50%);
+}
+
+.eyes2 .left,
+.eyes2 .right {
+  @extend %eyes;
+	height: 30px;
+  width: 30px;
+  border: 5px solid #2a2a2a;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  left: 16%;
+}
+
+.eyes2 .right {
+  left: initial;
+  right: 16%;
 }
 
 .mouth {

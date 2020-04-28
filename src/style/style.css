@@ -425,15 +425,17 @@ body {
           transform: rotate(90deg);
 }
 
-.eyes {
+.eyes1 .left,
+.eyes1 .right, .eyes2 .left,
+.eyes2 .right {
   position: absolute;
   top: 23%;
   width: 100%;
   z-index: 3;
 }
 
-.eyes .left,
-.eyes .right {
+.eyes1 .left,
+.eyes1 .right {
   position: absolute;
   height: 40px;
   width: 40px;
@@ -443,13 +445,13 @@ body {
   left: 16%;
 }
 
-.eyes .right {
+.eyes1 .right {
   left: initial;
   right: 16%;
 }
 
-.eyes .left::before,
-.eyes .right::before {
+.eyes1 .left::before,
+.eyes1 .right::before {
   content: '';
   position: absolute;
   top: 70%;
@@ -459,6 +461,24 @@ body {
   background: #2a2a2a;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+.eyes2 .left,
+.eyes2 .right {
+  height: 30px;
+  width: 30px;
+  border: 5px solid #2a2a2a;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-radius: 50%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  left: 16%;
+}
+
+.eyes2 .right {
+  left: initial;
+  right: 16%;
 }
 
 .mouth {
@@ -490,15 +510,39 @@ body {
 }
 
 .SelectionEyes {
-  display: -ms-grid;
-  display: grid;
-  height: 200px;
-  width: 90%;
+  /* grid-auto-flow: column; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 780px;
   background: #FFE066;
 }
 
-.SelectionEyes .eyesContainer {
-  height: 100px;
-  width: 100px;
+.SelectionEyes .eyesButton {
+  padding: 0;
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 150px;
+          flex: 0 0 150px;
+  height: 150px;
+  margin: 3px;
   background: #38618C;
+}
+
+.SelectionEyes .eyesButton .eyes1 .left {
+  left: 24%;
+}
+
+.SelectionEyes .eyesButton .eyes1 .right {
+  left: initial;
+  right: 24%;
+}
+
+.SelectionEyes .eyesButton .eyes2 .left {
+  left: 24%;
+}
+
+.SelectionEyes .eyesButton .eyes2 .right {
+  left: initial;
+  right: 24%;
 }

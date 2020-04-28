@@ -1,12 +1,51 @@
+$buttonSize: 150px;
+$buttonAmount: 5;
+$buttonMargin: 3px;
+
 .SelectionEyes {
-  display: grid;
-  height: 200px;
-  width: 90%;
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, 150px);
+  // grid-template-rows: repeat(5, 150px);
+  // grid-gap: 5px;
+  /* grid-auto-flow: column; */
+  // height: 160px;
+  display: flex;
+  width: ($buttonSize * 5 + $buttonMargin * 10);
   background: $color2;
 
-  .eyesContainer {
-    height: 100px;
-    width: 100px;
+  .eyesButton {
+    padding: 0;
+    position: relative;
+    flex: 0 0 $buttonSize;
+    height: $buttonSize;
+    margin: $buttonMargin;
     background: $color3;
+
+    .eyes1 {
+
+      .left {
+        left: 24%;
+      }
+      
+      .right {
+        left: initial;
+        right: 24%;
+      }
+    }
+
+    .eyes2 {
+
+      .left {
+        left: 24%;
+      }
+      
+      .right {
+        left: initial;
+        right: 24%;
+      }
+    }
+    
+    
+    
   }
 }
