@@ -1,0 +1,152 @@
+body {background: #333;}
+
+.canvas {
+	position: relative;
+	margin: auto;
+	height: 350px;
+	width: 350px;
+  z-index: -5;
+}
+
+.head {
+	position: absolute;
+	top: 35%;
+	left: 29%;
+	height: 45%;
+	width: 32%;
+	border-radius: 40% 40% 50% 50%;
+	background: tan;
+}
+
+.head2 {
+	position: absolute;
+	top: 35%;
+	left: 29%;
+	height: 45%;
+	width: 32%;
+	border-radius: 40% 40% 50% 50%;
+	background: rgb(0, 0, 0);
+}
+
+.hair {
+  position: absolute;
+	top: 0;
+  left: 25%;
+  
+  border-right:  100px solid transparent;
+  border-bottom: 120px  solid cornflowerblue;
+  border-left:   100px solid transparent;
+  
+  z-index: -1;
+  transform: translateX(-50%) rotate(185deg);
+}
+
+.hair .left,
+.hair .right {
+  position: absolute;
+	top: 20%;
+	left: 50%;
+  height:0px;
+  width:0px;
+  
+  border-right:  100px solid transparent;
+  border-bottom: 120px  solid cornflowerblue;
+  border-left:   100px solid transparent;
+  
+  z-index: 1;
+  transform: translateX(calc(-50% + 3px));
+}
+
+.hair .right {
+  transform: translate(calc(-60% - 3px), 1px) rotate(34deg) ;
+}
+
+.hair .left:before,
+.hair .right:before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: -105px;
+
+  border-right: 100px solid transparent;
+  border-bottom: 120px solid cornflowerblue;
+  border-left: 100px solid transparent;
+  
+  transform: rotate(45deg);
+}
+
+.hair .left:after,
+.hair .right:after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: -105px;
+
+  border-right: 100px solid transparent;
+  border-bottom: 120px solid cornflowerblue;
+  border-left: 100px solid transparent;
+  
+  transform: rotate(90deg);
+}
+
+.eyes {
+  position: absolute;
+	top: 23%;
+	width: 100%;
+	z-index: 3;
+}
+
+.eyes .left,
+.eyes .right {
+  position: absolute;
+	height: 40px;
+  width: 40px;
+  border: 1px solid #2a2a2a;
+	border-radius: 50%;
+	background: #fff;
+  
+  left: 16%;
+}
+
+.eyes .right {
+  left: initial;
+  right: 16%;
+}
+
+.eyes .left::before,
+.eyes .right::before {
+  content: '';
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  height: 3px;
+  width: 3px;
+  background: #2a2a2a;
+  transform: translateX(-50%);
+}
+
+.mouth {
+  position: absolute;
+  top: 74%;
+  left: 50%;
+	height: 10px;
+  width: 36px;
+  border: 1px solid #2a2a2a;
+  border-radius: 50% 50% 40% 40%;
+  background: darkred;
+  transform: translateX(-50%);
+}
+
+.nose {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+	height: 30px;
+  width: 15px;
+  border-top: 1px solid transparent;
+  border-right: 1px solid #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
+  border-left: 1px solid #2a2a2a;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
