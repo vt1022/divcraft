@@ -2,18 +2,21 @@ $buttonSize: 150px;
 $buttonAmount: 5;
 $buttonMargin: 3px;
 
-.SelectionEyes {
-  // display: grid;
-  // grid-template-columns: repeat(auto-fit, 150px);
-  // grid-template-rows: repeat(5, 150px);
-  // grid-gap: 5px;
-  /* grid-auto-flow: column; */
-  // height: 160px;
+.FeaturesSelection {
+  position: relative;
   display: flex;
   width: ($buttonSize * 5 + $buttonMargin * 10);
   background: $color2;
 
-  .eyesButton {
+  ul {
+    position: absolute;
+    top: -23px;
+    left: 0;
+    display: flex;
+    background: $color2;
+  }
+
+  .featureButton {
     padding: 0;
     position: relative;
     flex: 0 0 $buttonSize;
@@ -44,8 +47,12 @@ $buttonMargin: 3px;
         right: 24%;
       }
     }
-    
-    
-    
+
+    .hair {
+      top: 50%;
+      left: 50%;
+      z-index: 3;
+      transform: translate(-50%, -50%) rotate(185deg) scale(0.5);
+    }
   }
 }

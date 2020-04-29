@@ -6,29 +6,28 @@ body {background: #333;}
 	height: 350px;
 	width: 350px;
   z-index: -5;
+  background: #000;
 }
 
-.head {
+%head {
 	position: absolute;
-	top: 35%;
-	left: 29%;
+  top: 18%;
+  left: 35%;
 	height: 45%;
 	width: 32%;
 	border-radius: 40% 40% 50% 50%;
-	background: tan;
+  background: tan;
 }
+
+.head1, .head2, .head3, .head4, .head5 {@extend %head;}
 
 .head2 {
 	position: absolute;
-	top: 35%;
-	left: 29%;
-	height: 45%;
-	width: 32%;
-	border-radius: 40% 40% 50% 50%;
-	background: rgb(0, 0, 0);
+	border-radius: 20% 20% 40% 40%;
 }
 
-.hair {
+
+%hair {
   position: absolute;
 	top: 0;
   left: 25%;
@@ -37,12 +36,14 @@ body {background: #333;}
   border-bottom: 120px  solid cornflowerblue;
   border-left:   100px solid transparent;
   
-  z-index: -1;
+  z-index: -5;
   transform: translateX(-50%) rotate(185deg);
 }
 
-.hair .left,
-.hair .right {
+.hair1, .hair2, .hair3, .hair4, .hair5 {@extend %hair}
+
+.hair1 .left,
+.hair1 .right {
   position: absolute;
 	top: 20%;
 	left: 50%;
@@ -57,12 +58,12 @@ body {background: #333;}
   transform: translateX(calc(-50% + 3px));
 }
 
-.hair .right {
+.hair1 .right {
   transform: translate(calc(-60% - 3px), 1px) rotate(34deg) ;
 }
 
-.hair .left:before,
-.hair .right:before {
+.hair1 .left:before,
+.hair1 .right:before {
   content: '';
   position: absolute;
   top: 3px;
@@ -75,8 +76,8 @@ body {background: #333;}
   transform: rotate(45deg);
 }
 
-.hair .left:after,
-.hair .right:after {
+.hair1 .left:after,
+.hair1 .right:after {
   content: '';
   position: absolute;
   top: 3px;
@@ -91,14 +92,15 @@ body {background: #333;}
 
 %eyes {
   position: absolute;
-	top: 23%;
-	width: 100%;
+  top: 23%;
+  width: 100%;
 	z-index: 3;
 }
 
+.eyes1, .eyes2, .eyes3, .eyes4, .eyes5 {@extend %eyes}
+
 .eyes1 .left,
 .eyes1 .right {
-  @extend %eyes;
   position: absolute;
 	height: 40px;
   width: 40px;
@@ -128,7 +130,7 @@ body {background: #333;}
 
 .eyes2 .left,
 .eyes2 .right {
-  @extend %eyes;
+  position: absolute;
 	height: 30px;
   width: 30px;
   border: 5px solid #2a2a2a;
@@ -144,7 +146,7 @@ body {background: #333;}
   right: 16%;
 }
 
-.mouth {
+%mouth {
   position: absolute;
   top: 74%;
   left: 50%;
@@ -156,7 +158,9 @@ body {background: #333;}
   transform: translateX(-50%);
 }
 
-.nose {
+.mouth1, .mouth2, .mouth3, .mouth4, .mouth5 {@extend %mouth}
+
+%nose {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -168,4 +172,13 @@ body {background: #333;}
   border-left: 1px solid #2a2a2a;
   border-radius: 50%;
   transform: translateX(-50%);
+}
+
+.nose1, .nose2, .nose3, .nose4, .nose5 {@extend %nose}
+
+.nose2 {
+  height: 15px;
+  width: 15px;
+  border-top: 1px solid #2a2a2a;
+  border-bottom: 1px solid transparent;
 }

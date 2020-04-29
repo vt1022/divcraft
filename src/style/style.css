@@ -266,62 +266,10 @@ html {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    -webkit-animation: App-logo-spin infinite 20s linear;
-            animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@-webkit-keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 body {
@@ -345,12 +293,13 @@ body {
   height: 350px;
   width: 350px;
   z-index: -5;
+  background: #000;
 }
 
-.head {
+.head1, .head2, .head3, .head4, .head5 {
   position: absolute;
-  top: 35%;
-  left: 29%;
+  top: 18%;
+  left: 35%;
   height: 45%;
   width: 32%;
   border-radius: 40% 40% 50% 50%;
@@ -359,28 +308,23 @@ body {
 
 .head2 {
   position: absolute;
-  top: 35%;
-  left: 29%;
-  height: 45%;
-  width: 32%;
-  border-radius: 40% 40% 50% 50%;
-  background: black;
+  border-radius: 20% 20% 40% 40%;
 }
 
-.hair {
+.hair1, .hair2, .hair3, .hair4, .hair5 {
   position: absolute;
   top: 0;
   left: 25%;
   border-right: 100px solid transparent;
   border-bottom: 120px  solid cornflowerblue;
   border-left: 100px solid transparent;
-  z-index: -1;
+  z-index: -5;
   -webkit-transform: translateX(-50%) rotate(185deg);
           transform: translateX(-50%) rotate(185deg);
 }
 
-.hair .left,
-.hair .right {
+.hair1 .left,
+.hair1 .right {
   position: absolute;
   top: 20%;
   left: 50%;
@@ -394,13 +338,13 @@ body {
           transform: translateX(calc(-50% + 3px));
 }
 
-.hair .right {
+.hair1 .right {
   -webkit-transform: translate(calc(-60% - 3px), 1px) rotate(34deg);
           transform: translate(calc(-60% - 3px), 1px) rotate(34deg);
 }
 
-.hair .left:before,
-.hair .right:before {
+.hair1 .left:before,
+.hair1 .right:before {
   content: '';
   position: absolute;
   top: 3px;
@@ -412,8 +356,8 @@ body {
           transform: rotate(45deg);
 }
 
-.hair .left:after,
-.hair .right:after {
+.hair1 .left:after,
+.hair1 .right:after {
   content: '';
   position: absolute;
   top: 3px;
@@ -425,9 +369,7 @@ body {
           transform: rotate(90deg);
 }
 
-.eyes1 .left,
-.eyes1 .right, .eyes2 .left,
-.eyes2 .right {
+.eyes1, .eyes2, .eyes3, .eyes4, .eyes5 {
   position: absolute;
   top: 23%;
   width: 100%;
@@ -465,6 +407,7 @@ body {
 
 .eyes2 .left,
 .eyes2 .right {
+  position: absolute;
   height: 30px;
   width: 30px;
   border: 5px solid #2a2a2a;
@@ -481,7 +424,7 @@ body {
   right: 16%;
 }
 
-.mouth {
+.mouth1, .mouth2, .mouth3, .mouth4, .mouth5 {
   position: absolute;
   top: 74%;
   left: 50%;
@@ -494,7 +437,7 @@ body {
           transform: translateX(-50%);
 }
 
-.nose {
+.nose1, .nose2, .nose3, .nose4, .nose5 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -509,8 +452,15 @@ body {
           transform: translateX(-50%);
 }
 
-.SelectionEyes {
-  /* grid-auto-flow: column; */
+.nose2 {
+  height: 15px;
+  width: 15px;
+  border-top: 1px solid #2a2a2a;
+  border-bottom: 1px solid transparent;
+}
+
+.FeaturesSelection {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -518,7 +468,17 @@ body {
   background: #FFE066;
 }
 
-.SelectionEyes .eyesButton {
+.FeaturesSelection ul {
+  position: absolute;
+  top: -23px;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #FFE066;
+}
+
+.FeaturesSelection .featureButton {
   padding: 0;
   position: relative;
   -webkit-box-flex: 0;
@@ -529,20 +489,28 @@ body {
   background: #38618C;
 }
 
-.SelectionEyes .eyesButton .eyes1 .left {
+.FeaturesSelection .featureButton .eyes1 .left {
   left: 24%;
 }
 
-.SelectionEyes .eyesButton .eyes1 .right {
+.FeaturesSelection .featureButton .eyes1 .right {
   left: initial;
   right: 24%;
 }
 
-.SelectionEyes .eyesButton .eyes2 .left {
+.FeaturesSelection .featureButton .eyes2 .left {
   left: 24%;
 }
 
-.SelectionEyes .eyesButton .eyes2 .right {
+.FeaturesSelection .featureButton .eyes2 .right {
   left: initial;
   right: 24%;
+}
+
+.FeaturesSelection .featureButton .hair {
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  -webkit-transform: translate(-50%, -50%) rotate(185deg) scale(0.5);
+          transform: translate(-50%, -50%) rotate(185deg) scale(0.5);
 }

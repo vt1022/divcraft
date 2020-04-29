@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Character from './Character.js'
-import SelectionEyes from './SelectionEyes.js'
+import FeaturesSelection from './FeaturesSelection.js'
 import firebase from './firebase.js'
 import './style/style.css'
 
@@ -14,15 +14,15 @@ class App extends Component {
         "charId": "01",
         "charName": "default",
         "charStyles": {
-          "head": "head",
-          "hair": "hair",
+          "head": "head1",
+          "hair": "hair1",
           "eyes": "eyes1",
-          "nose": "nose",
-          "mouth": "mouth",
-          "body": "body"
+          "nose": "nose1",
+          "mouth": "mouth1",
+          "body": "body1"
         }
       },
-      eyesCss: ["eyes1", "eyes2", "eyes3", "eyes4", "eyes5"],
+      featuresToShowCss: ["eyes1", "eyes2", "eyes3", "eyes4", "eyes5"]
     }
   }
   
@@ -51,7 +51,7 @@ class App extends Component {
           characterArray: arrayOfCharacters,
           currentCharacter: characterObject
         })
-        console.log(data);
+        console.log(data)
       }
     })
   }
@@ -74,7 +74,7 @@ class App extends Component {
       //   }
       // }
       // change this to push object:
-      dbRef.push(this.state.userCharacterName);
+      dbRef.push(this.state.userCharacterName)
       this.setState({
         userCharacterName: ""
       })
@@ -92,8 +92,19 @@ class App extends Component {
     
     console.log(this.state.userCharacterName);
   }
+
+  handleFeatureNavClick = (clickedFeature) => {
+    const showThese = []
+    for (let i = 1; i < 6; i++) {
+      showThese.push(clickedFeature+i)
+    }
+    this.setState({
+      featuresToShowCss: showThese
+    })
+  }
+
   // a reusable function to change different features
-  changeFeature = (newFeature, newFeatureCssClass) => {
+  changeFeature = (newFeatureCssClass) => {
     const {body, hair, eyes, head, mouth, nose} = this.state.currentCharacter.charStyles
     // change the selected feature
     const newCharObj = {
@@ -108,7 +119,9 @@ class App extends Component {
         "body": body
       }
     }
-    newCharObj["charStyles"][newFeature] = newFeatureCssClass
+    const re = /[a-z]+/gi
+    const clickedFeature = re.exec(newFeatureCssClass).join()
+    newCharObj['charStyles'][clickedFeature] = newFeatureCssClass
     this.setState({
       currentCharacter: newCharObj
     })
@@ -116,7 +129,7 @@ class App extends Component {
 
   render() {
     const {body, hair, eyes, head, mouth, nose} = this.state.currentCharacter.charStyles
-    const {eyesCss} = this.state
+    const {featuresToShowCss} = this.state
     return (
       <div className="App">
         <form action="" onSubmit={this.handleSubmit}>
@@ -124,6 +137,7 @@ class App extends Component {
           <input type="text" id="characterName" onChange={this.handleNameInput} value ={this.state.userCharacterName}/>
           <button>Create</button>
         </form>
+
         <Character 
           head={head}
           hair={hair}
@@ -132,9 +146,11 @@ class App extends Component {
           mouth={mouth}
           body={body}
         />
-        <SelectionEyes 
-          eyes={eyesCss} 
+        
+        <FeaturesSelection 
+          selectedFeatureArray={featuresToShowCss} 
           changeFeatureFunction={this.changeFeature}
+          featureNavClickFunction={this.handleFeatureNavClick}
         />
       </div>
     );
