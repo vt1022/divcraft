@@ -58,7 +58,7 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const {character} = this.state;
+    // const {character} = this.state;
     if (this.state.userCharacterName.trim() !== "") {
       const dbRef = firebase.database().ref()
       // push this to fb:
@@ -146,7 +146,7 @@ class App extends Component {
           mouth={mouth}
           body={body}
         />
-        
+
         <FeaturesSelection 
           selectedFeatureArray={featuresToShowCss} 
           changeFeatureFunction={this.changeFeature}

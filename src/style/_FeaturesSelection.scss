@@ -22,10 +22,30 @@ $buttonMargin: 3px;
     flex: 0 0 $buttonSize;
     height: $buttonSize;
     margin: $buttonMargin;
-    background: $color3;
+    background: $white;
+
+    .hair {
+      top: 50%;
+      left: 50%;
+      z-index: 3;
+      transform: translate(-50%, -50%) scale(0.6);
+
+      &.hair2 {top: 40%; height: 80%;}
+      &.hair3 {height: 71%; transform: translate(-50%, -50%) rotate(180deg) scale(0.6);}
+      &.hair4 {top: 40%; height: 45%;}
+      &.hair5 {height: 75%;}
+    }
+
+    .head {
+      top: 50%;
+      transform: translate(-50%, -50%) scale(1.4);
+    }
 
     .eyes {
+      top: 30%;
+      left: 50%;
       z-index: 3;
+      transform: translate(-50%, -50%) scale(1.2);
     }
 
     .eyes1 {
@@ -43,21 +63,29 @@ $buttonMargin: 3px;
     .eyes2 {
 
       .left {
-        left: 24%;
+        left: 26%;
       }
       
       .right {
         left: initial;
-        right: 24%;
+        right: 26%;
       }
     }
 
-    .hair {
+    .nose {
       top: 50%;
-      left: 50%;
-      z-index: 3;
-      transform: translate(-50%, -50%) scale(0.5);
+      transform: translateX(-50%) scale(2);
+
+      &.nose4 {transform: translateX(-50%) rotate(20deg) scale(2);}
     }
+
+    .mouth {
+      top: 50%;
+      transform: translateX(-50%) scale(2);
+
+      &.mouth3 {top: 25%;}
+    }
+    
     .body {
       top: 50%;
       left: 50%;
