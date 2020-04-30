@@ -1,22 +1,22 @@
-body {background: #333;}
-
-.canvas {
+.character {
 	position: relative;
 	margin: auto;
 	height: 350px;
 	width: 350px;
-  z-index: -5;
-  background: #000;
+  // background: #000;
 }
-
+// head start
 %head {
 	position: absolute;
   top: 18%;
-  left: 35%;
-	height: 45%;
-	width: 32%;
+  left: 50%;
+	height: 40%;
+  width: 30%;
+  border: 1px solid $black;
 	border-radius: 40% 40% 50% 50%;
   background: tan;
+  transform: translateX(-50%);
+  transform-style: preserve-3d;
 }
 
 .head1, .head2, .head3, .head4, .head5 {@extend %head;}
@@ -25,117 +25,137 @@ body {background: #333;}
 	position: absolute;
 	border-radius: 20% 20% 40% 40%;
 }
+// head end
 
-
+// hair start
 %hair {
   position: absolute;
-	top: 0;
-  left: 25%;
-  
-  border-right:  100px solid transparent;
-  border-bottom: 120px  solid cornflowerblue;
-  border-left:   100px solid transparent;
-  
-  z-index: -5;
-  transform: translateX(-50%) rotate(185deg);
+	top: -2px;
+  left: 50%;
+  width: calc(100% + 3px);
+  height: 40%;
+  border-radius: 1.5em 1.5em 0 0;
+  background: $black;
+  transform: translateX(-50%);
+  transform-style: preserve-3d;
 }
 
-.hair1, .hair2, .hair3, .hair4, .hair5 {@extend %hair}
+.hair1, .hair2, .hair3, .hair4, .hair5 {@extend %hair;}
 
-.hair1 .left,
-.hair1 .right {
-  position: absolute;
-	top: 20%;
-	left: 50%;
-  height:0px;
-  width:0px;
-  
-  border-right:  100px solid transparent;
-  border-bottom: 120px  solid cornflowerblue;
-  border-left:   100px solid transparent;
-  
-  z-index: 1;
-  transform: translateX(calc(-50% + 3px));
+.hair1 {
+
+  &::after {
+    @include pseudo;
+		top: 100%;
+		background: linear-gradient(55deg, $black 0, transparent 0%, transparent 66%, $black 0%), linear-gradient(-55deg, transparent 33%, transparent 0%, transparent 66%, $black 0%);
+		background-size: 20px 20px;
+    background-repeat: repeat-X;
+  }
 }
 
-.hair1 .right {
-  transform: translate(calc(-60% - 3px), 1px) rotate(34deg) ;
+.hair2 {
+  height: 60%;
+  border-radius: 1.5em 1.5em 3em 0;
+
+  &::before {
+    @include pseudo;
+    bottom: 100%;
+    left: 40%;
+    width: (15px * 3 - 1px);
+		background: linear-gradient(-25deg, $black 0, transparent 0, transparent 66%, $black 0);
+		background-size: 15px 15px;
+    background-repeat: repeat-x;
+    transform: rotate(180deg) ;
+  }
+
+  &::after {
+    @include pseudo;
+		top: 100%;
+		background: linear-gradient(-35deg, $black 0, transparent 0%, transparent 80%, $black 0%);
+		background-size: 100px 100px;
+		background-repeat: no-repeat;
+  }
 }
 
-.hair1 .left:before,
-.hair1 .right:before {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: -105px;
+.hair3 {
+  height: 50%;
+  width: calc(100% + 10px);
+  border-radius: 0 2em 0 3em;
+  transform: translateX(-50%) rotate(180deg);
 
-  border-right: 100px solid transparent;
-  border-bottom: 120px solid cornflowerblue;
-  border-left: 100px solid transparent;
-  
-  transform: rotate(45deg);
+  &::before {
+    @include pseudo;
+    bottom: 100%;
+    width: (15px * 3);
+		background: linear-gradient(65deg, $black 0, transparent 0, transparent 66%, $black 0);
+		background-size: 15px 60px;
+    background-repeat: repeat-x;
+    transform: rotate(180deg) ;
+  }
+
+  &::after {
+    @include pseudo;
+    top: 100%;
+    right: 0;
+    width: (15px * 5 - 15px / 2);
+		background: linear-gradient(55deg, $black 0, transparent 0%, transparent 66%, $black 0%), linear-gradient(-55deg, transparent 33%, transparent 0%, transparent 66%, $black 0%);
+    background-size: 15px 12px;
+    background-position: top right;
+    background-repeat: repeat-x;
+  }
 }
+// hair end
 
-.hair1 .left:after,
-.hair1 .right:after {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: -105px;
-
-  border-right: 100px solid transparent;
-  border-bottom: 120px solid cornflowerblue;
-  border-left: 100px solid transparent;
-  
-  transform: rotate(90deg);
-}
-
+// eyes start
 %eyes {
   position: absolute;
-  top: 23%;
+  top: 40%;
   width: 100%;
-	z-index: 3;
+	z-index: -3;
 }
 
-.eyes1, .eyes2, .eyes3, .eyes4, .eyes5 {@extend %eyes}
+.eyes1, .eyes2, .eyes3, .eyes4, .eyes5 {@extend %eyes;}
 
 .eyes1 .left,
 .eyes1 .right {
   position: absolute;
 	height: 40px;
   width: 40px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid $black;
 	border-radius: 50%;
-	background: #fff;
+	background: $white;
   
-  left: 16%;
+  left: 12%;
 }
 
 .eyes1 .right {
   left: initial;
-  right: 16%;
+  right: 12%;
 }
 
 .eyes1 .left::before,
 .eyes1 .right::before {
-  content: '';
-  position: absolute;
+  @include pseudo;
   top: 70%;
   left: 50%;
   height: 3px;
   width: 3px;
-  background: #2a2a2a;
+  background: $black;
   transform: translateX(-50%);
+}
+
+.eyes2 {
+  top: 54%;
 }
 
 .eyes2 .left,
 .eyes2 .right {
   position: absolute;
-	height: 30px;
+  height: 30px;
   width: 30px;
-  border: 5px solid #2a2a2a;
-  border-bottom: 2px solid transparent;
-  border-left: 2px solid transparent;
+  border: 5px solid $black;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
   border-radius: 50%;
   transform: rotate(-45deg);
   left: 16%;
@@ -145,10 +165,12 @@ body {background: #333;}
   left: initial;
   right: 16%;
 }
+// eyes end
+
 
 %mouth {
   position: absolute;
-  top: 74%;
+  top: 83%;
   left: 50%;
 	height: 10px;
   width: 36px;
@@ -158,27 +180,58 @@ body {background: #333;}
   transform: translateX(-50%);
 }
 
-.mouth1, .mouth2, .mouth3, .mouth4, .mouth5 {@extend %mouth}
+.mouth1, .mouth2, .mouth3, .mouth4, .mouth5 {@extend %mouth;}
 
 %nose {
   position: absolute;
-  top: 50%;
+  top: 67%;
   left: 50%;
-	height: 30px;
+	height: 15px;
   width: 15px;
   border-top: 1px solid transparent;
-  border-right: 1px solid #2a2a2a;
-  border-bottom: 1px solid #2a2a2a;
-  border-left: 1px solid #2a2a2a;
+  border-right: 1px solid transparent;
+  border-bottom: 3px solid $black;
+  border-left: 1px solid transparent;
   border-radius: 50%;
   transform: translateX(-50%);
 }
 
-.nose1, .nose2, .nose3, .nose4, .nose5 {@extend %nose}
+.nose1, .nose2, .nose3, .nose4, .nose5 {@extend %nose;}
 
 .nose2 {
   height: 15px;
   width: 15px;
   border-top: 1px solid #2a2a2a;
   border-bottom: 1px solid transparent;
+}
+
+%body {
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  z-index: -4;
+  height: 0;
+  width: 60px;
+  border-bottom: 50px solid $color1;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-radius: 0 0 2% 2%;
+  transform: translateX(-50%) translateZ(-3px);
+  transform-style: preserve-3d;
+}
+
+.body1, .body2, .body3, .body4, .body5 {@extend %body;}
+
+.body1 {
+  @extend %body;
+
+  &::after { // border for body
+    @extend %body;
+    @include pseudo;
+    top: 0;
+    left: 50%;
+    width: 64px;
+    border-bottom: 52px solid $black;
+    transform: translateX(-50%) translateZ(-3px);
+  }
 }

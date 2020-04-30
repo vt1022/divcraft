@@ -24,6 +24,10 @@ $buttonMargin: 3px;
     margin: $buttonMargin;
     background: $color3;
 
+    .eyes {
+      z-index: 3;
+    }
+
     .eyes1 {
 
       .left {
@@ -52,7 +56,13 @@ $buttonMargin: 3px;
       top: 50%;
       left: 50%;
       z-index: 3;
-      transform: translate(-50%, -50%) rotate(185deg) scale(0.5);
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+    .body {
+      top: 50%;
+      left: 50%;
+      z-index: 3;
+      transform: translate(-50%, -50%);
     }
   }
 }

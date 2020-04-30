@@ -10,6 +10,13 @@ $color3: #38618C;
 $color4: #35A7FF;
 
 // mixins
+@mixin pseudo {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
 
 // vertical + horizontal centering w/ flexbox
 @mixin flexCenter() {

@@ -283,27 +283,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-body {
-  background: #333;
-}
-
-.canvas {
+.character {
   position: relative;
   margin: auto;
   height: 350px;
   width: 350px;
-  z-index: -5;
-  background: #000;
 }
 
 .head1, .head2, .head3, .head4, .head5 {
   position: absolute;
   top: 18%;
-  left: 35%;
-  height: 45%;
-  width: 32%;
+  left: 50%;
+  height: 40%;
+  width: 30%;
+  border: 1px solid #2e2e2e;
   border-radius: 40% 40% 50% 50%;
   background: tan;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 .head2 {
@@ -313,67 +312,106 @@ body {
 
 .hair1, .hair2, .hair3, .hair4, .hair5 {
   position: absolute;
-  top: 0;
-  left: 25%;
-  border-right: 100px solid transparent;
-  border-bottom: 120px  solid cornflowerblue;
-  border-left: 100px solid transparent;
-  z-index: -5;
-  -webkit-transform: translateX(-50%) rotate(185deg);
-          transform: translateX(-50%) rotate(185deg);
-}
-
-.hair1 .left,
-.hair1 .right {
-  position: absolute;
-  top: 20%;
+  top: -2px;
   left: 50%;
-  height: 0px;
-  width: 0px;
-  border-right: 100px solid transparent;
-  border-bottom: 120px  solid cornflowerblue;
-  border-left: 100px solid transparent;
-  z-index: 1;
-  -webkit-transform: translateX(calc(-50% + 3px));
-          transform: translateX(calc(-50% + 3px));
+  width: calc(100% + 3px);
+  height: 40%;
+  border-radius: 1.5em 1.5em 0 0;
+  background: #2e2e2e;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
-.hair1 .right {
-  -webkit-transform: translate(calc(-60% - 3px), 1px) rotate(34deg);
-          transform: translate(calc(-60% - 3px), 1px) rotate(34deg);
-}
-
-.hair1 .left:before,
-.hair1 .right:before {
+.hair1::after {
   content: '';
   position: absolute;
-  top: 3px;
-  left: -105px;
-  border-right: 100px solid transparent;
-  border-bottom: 120px solid cornflowerblue;
-  border-left: 100px solid transparent;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 100%;
+  background: linear-gradient(55deg, #2e2e2e 0, transparent 0%, transparent 66%, #2e2e2e 0%), linear-gradient(-55deg, transparent 33%, transparent 0%, transparent 66%, #2e2e2e 0%);
+  background-size: 20px 20px;
+  background-repeat: repeat-X;
 }
 
-.hair1 .left:after,
-.hair1 .right:after {
+.hair2 {
+  height: 60%;
+  border-radius: 1.5em 1.5em 3em 0;
+}
+
+.hair2::before {
   content: '';
   position: absolute;
-  top: 3px;
-  left: -105px;
-  border-right: 100px solid transparent;
-  border-bottom: 120px solid cornflowerblue;
-  border-left: 100px solid transparent;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  display: block;
+  height: 100%;
+  width: 100%;
+  bottom: 100%;
+  left: 40%;
+  width: 44px;
+  background: linear-gradient(-25deg, #2e2e2e 0, transparent 0, transparent 66%, #2e2e2e 0);
+  background-size: 15px 15px;
+  background-repeat: repeat-x;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.hair2::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 100%;
+  background: linear-gradient(-35deg, #2e2e2e 0, transparent 0%, transparent 80%, #2e2e2e 0%);
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+}
+
+.hair3 {
+  height: 50%;
+  width: calc(100% + 10px);
+  border-radius: 0 2em 0 3em;
+  -webkit-transform: translateX(-50%) rotate(180deg);
+          transform: translateX(-50%) rotate(180deg);
+}
+
+.hair3::before {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  bottom: 100%;
+  width: 45px;
+  background: linear-gradient(65deg, #2e2e2e 0, transparent 0, transparent 66%, #2e2e2e 0);
+  background-size: 15px 60px;
+  background-repeat: repeat-x;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.hair3::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 100%;
+  right: 0;
+  width: 67.5px;
+  background: linear-gradient(55deg, #2e2e2e 0, transparent 0%, transparent 66%, #2e2e2e 0%), linear-gradient(-55deg, transparent 33%, transparent 0%, transparent 66%, #2e2e2e 0%);
+  background-size: 15px 12px;
+  background-position: top right;
+  background-repeat: repeat-x;
 }
 
 .eyes1, .eyes2, .eyes3, .eyes4, .eyes5 {
   position: absolute;
-  top: 23%;
+  top: 40%;
   width: 100%;
-  z-index: 3;
+  z-index: -3;
 }
 
 .eyes1 .left,
@@ -381,28 +419,35 @@ body {
   position: absolute;
   height: 40px;
   width: 40px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #2e2e2e;
   border-radius: 50%;
-  background: #fff;
-  left: 16%;
+  background: #f6f6f6;
+  left: 12%;
 }
 
 .eyes1 .right {
   left: initial;
-  right: 16%;
+  right: 12%;
 }
 
 .eyes1 .left::before,
 .eyes1 .right::before {
   content: '';
   position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
   top: 70%;
   left: 50%;
   height: 3px;
   width: 3px;
-  background: #2a2a2a;
+  background: #2e2e2e;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+.eyes2 {
+  top: 54%;
 }
 
 .eyes2 .left,
@@ -410,9 +455,9 @@ body {
   position: absolute;
   height: 30px;
   width: 30px;
-  border: 5px solid #2a2a2a;
-  border-bottom: 2px solid transparent;
-  border-left: 2px solid transparent;
+  border: 5px solid #2e2e2e;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
   border-radius: 50%;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -426,7 +471,7 @@ body {
 
 .mouth1, .mouth2, .mouth3, .mouth4, .mouth5 {
   position: absolute;
-  top: 74%;
+  top: 83%;
   left: 50%;
   height: 10px;
   width: 36px;
@@ -439,14 +484,14 @@ body {
 
 .nose1, .nose2, .nose3, .nose4, .nose5 {
   position: absolute;
-  top: 50%;
+  top: 67%;
   left: 50%;
-  height: 30px;
+  height: 15px;
   width: 15px;
   border-top: 1px solid transparent;
-  border-right: 1px solid #2a2a2a;
-  border-bottom: 1px solid #2a2a2a;
-  border-left: 1px solid #2a2a2a;
+  border-right: 1px solid transparent;
+  border-bottom: 3px solid #2e2e2e;
+  border-left: 1px solid transparent;
   border-radius: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -457,6 +502,37 @@ body {
   width: 15px;
   border-top: 1px solid #2a2a2a;
   border-bottom: 1px solid transparent;
+}
+
+.body1, .body2, .body3, .body4, .body5, .body1::after {
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  z-index: -4;
+  height: 0;
+  width: 60px;
+  border-bottom: 50px solid #FF5964;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-radius: 0 0 2% 2%;
+  -webkit-transform: translateX(-50%) translateZ(-3px);
+          transform: translateX(-50%) translateZ(-3px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.body1::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 50%;
+  width: 64px;
+  border-bottom: 52px solid #2e2e2e;
+  -webkit-transform: translateX(-50%) translateZ(-3px);
+          transform: translateX(-50%) translateZ(-3px);
 }
 
 .FeaturesSelection {
@@ -489,6 +565,10 @@ body {
   background: #38618C;
 }
 
+.FeaturesSelection .featureButton .eyes {
+  z-index: 3;
+}
+
 .FeaturesSelection .featureButton .eyes1 .left {
   left: 24%;
 }
@@ -511,6 +591,14 @@ body {
   top: 50%;
   left: 50%;
   z-index: 3;
-  -webkit-transform: translate(-50%, -50%) rotate(185deg) scale(0.5);
-          transform: translate(-50%, -50%) rotate(185deg) scale(0.5);
+  -webkit-transform: translate(-50%, -50%) scale(0.5);
+          transform: translate(-50%, -50%) scale(0.5);
+}
+
+.FeaturesSelection .featureButton .body {
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
