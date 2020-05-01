@@ -19,13 +19,14 @@ class FeaturesSelection extends Component {
         </ul>
         {
           selectedFeatureArray.map( (cssClass) => {
+            // regEx to grab class without numbers
             const re = /[a-z]+/gi
             const globalClass = re.exec(cssClass).join()
             return(
               <button key={cssClass} className="featureButton" 
               onClick={() => changeFeatureFunction(cssClass)}>
                 <div className={`${cssClass} ${globalClass}`}>
-                  {
+                  { // add left, right for eyes
                     globalClass === "eyes"
                       ? <>
                           <div className="left"></div>
@@ -33,7 +34,7 @@ class FeaturesSelection extends Component {
                         </>
                       : <></>
                   }
-                  {
+                  { // add legs for body
                     globalClass === "body"
                       ? <div className="legs"></div>
                       : <></>

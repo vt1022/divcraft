@@ -2,12 +2,13 @@
 	position: relative;
 	margin: auto;
 	height: 350px;
-	width: 350px;
+  width: 350px;
+  transform: translateZ(1px);
 }
 // head start
 %head {
 	position: absolute;
-  top: 18%;
+  top: 25%;
   left: 50%;
 	height: 40%;
   width: 30%;
@@ -59,7 +60,7 @@
 
   &::before {
     @include pseudo;
-    bottom: 100%;
+    bottom: 99%;
     left: 40%;
     width: (15px * 3 - 1px);
 
@@ -72,7 +73,7 @@
 
   &::after {
     @include pseudo;
-    top: 100%;
+    top: 99%;
     
 		background: linear-gradient(-35deg, $black 0, transparent 0%, transparent 80%, $black 0%);
 		background-size: 100px 100px;
@@ -87,7 +88,7 @@
 
   &::before {
     @include pseudo;
-    bottom: 100%;
+    bottom: 99%;
     width: (15px * 3);
 
 		background: linear-gradient(65deg, $black 0, transparent 0, transparent 66%, $black 0);
@@ -115,7 +116,7 @@
 
   &::before {
     @include pseudo;
-    top: 100%;
+    top: 99%;
     left: 23%;
     width: (15px * 3);
 
@@ -126,7 +127,7 @@
 
   &::after {
     @include pseudo;
-    top: 100%;
+    top: 99%;
     right: 0;
     border-radius: 0 0 2.5em 0em;
 
@@ -142,7 +143,7 @@
 
   &::before {
     @include pseudo;
-    bottom: 100%;
+    bottom: 99%;
     width: (15px * 3);
 
 		background: linear-gradient(70deg, $black 0, transparent 0, transparent 66%, $black 0);

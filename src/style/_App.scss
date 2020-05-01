@@ -1,11 +1,45 @@
+body {background: $color4;}
+
 .App {
   @include flexCenter();
   flex-direction: column;
   text-align: center;
+
+  max-width: 900px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.charCreation {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  padding: 30px;
+  border: 1px solid $color3;
+  border-radius: 0 2em;
+
+  background: $white;
+  transform-style: preserve-3d;
+  box-shadow: 5px 5px 0px $color3;
+}
+
+.grass {
+  position: absolute;
+  top: 45%;
+  left: 5px;
+  
+  height: 30px;
+  width: calc(100% - 10px);
+  border-bottom: 1px solid green;
+
+  background: linear-gradient(125deg, #bef175 0, transparent 0%, transparent 66%, #bef175 0%), linear-gradient(-125deg, transparent 33%, transparent 0%, transparent 66%, #bef175 0%);
+  background-size: 20px 20px;
+  background-repeat: repeat-X;
+  background-position: bottom;
 }
