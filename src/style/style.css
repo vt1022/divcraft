@@ -494,12 +494,12 @@ code {
 .eyes1 .left,
 .eyes1 .right {
   position: absolute;
+  left: 12%;
   height: 40px;
   width: 40px;
   border: 1px solid #2e2e2e;
   border-radius: 50%;
   background: #f6f6f6;
-  left: 12%;
 }
 
 .eyes1 .right {
@@ -530,6 +530,7 @@ code {
 .eyes2 .left,
 .eyes2 .right {
   position: absolute;
+  left: 16%;
   height: 30px;
   width: 30px;
   border: 5px solid #2e2e2e;
@@ -538,12 +539,47 @@ code {
   border-radius: 50%;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  left: 16%;
 }
 
 .eyes2 .right {
   left: initial;
   right: 16%;
+}
+
+.eyes3 {
+  top: 62%;
+}
+
+.eyes3 .left,
+.eyes3 .right {
+  position: absolute;
+  left: 25%;
+  height: 10px;
+  width: 20px;
+  border: 1px solid #2e2e2e;
+  border-radius: 0 0 4em 4em;
+  background: #f6f6f6;
+}
+
+.eyes3 .right {
+  left: initial;
+  right: 25%;
+}
+
+.eyes3 .left::before,
+.eyes3 .right::before {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 70%;
+  left: 50%;
+  height: 3px;
+  width: 3px;
+  background: #2e2e2e;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .mouth1, .mouth2, .mouth3, .mouth4, .mouth5 {
