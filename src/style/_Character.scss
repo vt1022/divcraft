@@ -296,8 +296,6 @@
   border-bottom: 3px solid $black;
   border-left: 1px solid transparent;
   border-radius: 40%;
-
-  // transform: rotate(-90deg);
 }
 
 .eyes5 .right {left: initial; right: 16%;}
@@ -452,16 +450,121 @@
 
 .body1, .body2, .body3, .body4, .body5 {@extend %body;}
 
-.body1 {
-  @extend %body;
+%legs {
+  position: absolute;
+  top: 52px;
+  transform-style: preserve-3d;
 
+  &::before,
+  &::after {
+    @include pseudo;
+    left: -10px;
+    height: 10px;
+    width: 30px;
+
+    border-top: 1px solid transparent;
+    border-right: 1px solid $black;
+    border-bottom: 3px solid $black;
+    border-left: 1px solid $black;
+    border-radius: 40%;
+    
+    background: $white;
+    transform: translateZ(-3px);
+  }
+
+  &::after {left: initial; right: -50px;}
+}
+
+.body1 {
   &::after { // border for body
     @extend %body;
     @include pseudo;
     top: 0;
     left: 50%;
-    width: 64px;
+    width: 62px;
     border-bottom: 52px solid $black;
     transform: translateX(-50%) translateZ(-3px);
   }
+  .legs {@extend %legs;}  
+}
+
+.body2 {
+  top: 86%;
+  height: 50px;
+  width: 80px;
+  border: 1px solid $black;
+  border-bottom: 3px solid $black;
+  border-radius: 3em 3em 50% 50%;
+  background: $color2;
+
+  .legs {
+    @extend %legs;
+    top: 48px;
+    &::before {left: 9px;}
+    &::after {left: 39px;}
+  } 
+}
+
+.body3 {
+  top: 86%;
+  height: 50px;
+  width: 40px;
+  border: 1px solid $black;
+  border-bottom: 3px solid $black;
+  border-radius: 1em;
+  background: $color3;
+
+  .legs {
+    @extend %legs;
+    top: 48px;
+    &::before {left: -11px;}
+    &::after {left: 19px;}
+  } 
+}
+
+.body4 {
+  height: 0;
+  width: 65px;
+
+  border-top: 50px solid $color4;
+  border-left: 15px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-right: 15px solid transparent;
+  border-radius: 0 0 2% 2%;
+
+  &::after { // border for body
+    @include pseudo;
+    bottom: calc(100% - 3px);
+    left: 50%;
+    width: 68px;
+    border-top: 53px solid $black;
+    border-left: 15px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-right: 15px solid transparent;
+    transform: translateX(-50%) translateZ(-3px);
+  }
+
+  .legs {
+    @extend %legs;
+    top: 1px;
+    &::before {left: -13px;}
+    &::after {left: 17px;}
+  }  
+}
+
+.body5 {
+  top: 86%;
+  height: 50px;
+  width: 70px;
+  border: 1px solid $black;
+  border-bottom: 3px solid $black;
+  border-radius: 50% 50% 2em 2em;
+  background: $grey;
+
+  .legs {
+    @extend %legs;
+    top: 48px;
+    &::before {left: 4px;}
+    &::after {left: 34px;}
+  } 
 }

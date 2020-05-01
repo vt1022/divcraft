@@ -4,6 +4,8 @@ import FeaturesSelection from './FeaturesSelection.js'
 import firebase from './firebase.js'
 import './style/style.css'
 
+import FadeIn from 'react-fade-in'
+
 class App extends Component {
   constructor() {
     super();
@@ -128,11 +130,13 @@ class App extends Component {
     const {featuresToShowCss} = this.state
     return (
       <div className="App">
-        <form action="" onSubmit={this.handleSubmit}>
-          <label htmlFor="characterName">Name:</label>
-          <input type="text" id="characterName" onChange={this.handleNameInput} value ={this.state.userCharacterName}/>
-          <button>Create</button>
-        </form>
+        <FadeIn>
+          <form action="" onSubmit={this.handleSubmit}>
+            <label htmlFor="characterName">Name:</label>
+            <input type="text" id="characterName" onChange={this.handleNameInput} value ={this.state.userCharacterName}/>
+            <button>Create</button>
+          </form>
+        </FadeIn>
 
         <Character 
           head={head}
@@ -143,11 +147,13 @@ class App extends Component {
           body={body}
         />
 
-        <FeaturesSelection 
-          selectedFeatureArray={featuresToShowCss} 
-          changeFeatureFunction={this.changeFeature}
-          featureNavClickFunction={this.handleFeatureNavClick}
-        />
+        <FadeIn>
+          <FeaturesSelection 
+            selectedFeatureArray={featuresToShowCss} 
+            changeFeatureFunction={this.changeFeature}
+            featureNavClickFunction={this.handleFeatureNavClick}
+          />
+        </FadeIn>
       </div>
     );
   }

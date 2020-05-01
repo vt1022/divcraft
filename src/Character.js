@@ -7,8 +7,6 @@ class Character extends Component {
       <div className="character">
         <div className={head}>
           <div className={hair}>
-            <div className="left"></div>
-            <div className="right"></div>
           </div>
           <div className={eyes}>
             <div className="left"></div>
@@ -16,7 +14,9 @@ class Character extends Component {
           </div>
           <div className={nose}></div>
           <div className={mouth}></div>
-          <div className={body}></div>
+          <div className={body}>
+            <div className="legs"></div>
+          </div>
         </div>
       </div>
     )

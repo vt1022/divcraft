@@ -25,8 +25,19 @@ class FeaturesSelection extends Component {
               <button key={cssClass} className="featureButton" 
               onClick={() => changeFeatureFunction(cssClass)}>
                 <div className={`${cssClass} ${globalClass}`}>
-                  <div className="left"></div>
-                  <div className="right"></div>
+                  {
+                    globalClass === "eyes"
+                      ? <>
+                          <div className="left"></div>
+                          <div className="right"></div>
+                        </>
+                      : <></>
+                  }
+                  {
+                    globalClass === "body"
+                      ? <div className="legs"></div>
+                      : <></>
+                  }
                 </div>
               </button>
             )
