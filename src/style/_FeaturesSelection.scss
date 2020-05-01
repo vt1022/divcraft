@@ -1,5 +1,4 @@
 $buttonSize: 150px;
-$buttonAmount: 5;
 $buttonMargin: 3px;
 
 .FeaturesSelection {
@@ -49,27 +48,20 @@ $buttonMargin: 3px;
     }
 
     .eyes1 {
-
-      .left {
-        left: 24%;
-      }
-      
-      .right {
-        left: initial;
-        right: 24%;
-      }
+      .left {left: 23%;}
+      .right {right: 23%;}
     }
 
-    .eyes2 {
+    .eyes2, .eyes4, .eyes5 {
+      top: 35%;
+      .left {left: 25%;}
+      .right {right: 25%;}
+    }
 
-      .left {
-        left: 26%;
-      }
-      
-      .right {
-        left: initial;
-        right: 26%;
-      }
+    .eyes3 {
+      top: 40%;
+      .left {left: 32%;}
+      .right {right: 32%;}
     }
 
     .nose {

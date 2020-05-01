@@ -3,7 +3,6 @@
 	margin: auto;
 	height: 350px;
 	width: 350px;
-  // background: #000;
 }
 // head start
 %head {
@@ -20,22 +19,10 @@
 }
 
 .head1, .head2, .head3, .head4, .head5 {@extend %head;}
-
-.head2 {
-  border-radius: 4em;
-}
-
-.head3 {
-	border-radius: 40%;
-}
-
-.head4 {
-	border-radius: 40% 40% 30% 30%;
-}
-
-.head5 {
-	border-radius: 40% 40% 20% 20%;
-}
+.head2 {border-radius: 4em;}
+.head3 {border-radius: 40%;}
+.head4 {border-radius: 40% 40% 30% 30%;}
+.head5 {border-radius: 40% 40% 20% 20%;}
 // head end
 
 // hair start
@@ -43,9 +30,11 @@
   position: absolute;
 	top: -2px;
   left: 50%;
+
   width: calc(100% + 8px);
   height: 40%;
   border-radius: 1.5em 1.5em 0 0;
+
   background: $black;
   transform: translateX(-50%);
   transform-style: preserve-3d;
@@ -54,10 +43,10 @@
 .hair1, .hair2, .hair3, .hair4, .hair5 {@extend %hair;}
 
 .hair1 {
-
   &::after {
     @include pseudo;
-		top: 100%;
+    top: 100%;
+    
 		background: linear-gradient(55deg, $black 0, transparent 0%, transparent 66%, $black 0%), linear-gradient(-55deg, transparent 33%, transparent 0%, transparent 66%, $black 0%);
 		background-size: 20px 20px;
     background-repeat: repeat-X;
@@ -73,15 +62,18 @@
     bottom: 100%;
     left: 40%;
     width: (15px * 3 - 1px);
+
 		background: linear-gradient(-25deg, $black 0, transparent 0, transparent 66%, $black 0);
 		background-size: 15px 15px;
     background-repeat: repeat-x;
+
     transform: rotate(180deg) ;
   }
 
   &::after {
     @include pseudo;
-		top: 100%;
+    top: 100%;
+    
 		background: linear-gradient(-35deg, $black 0, transparent 0%, transparent 80%, $black 0%);
 		background-size: 100px 100px;
 		background-repeat: no-repeat;
@@ -97,9 +89,11 @@
     @include pseudo;
     bottom: 100%;
     width: (15px * 3);
+
 		background: linear-gradient(65deg, $black 0, transparent 0, transparent 66%, $black 0);
 		background-size: 15px 60px;
     background-repeat: repeat-x;
+
     transform: rotate(180deg) ;
   }
 
@@ -108,6 +102,7 @@
     top: 99%;
     right: 27px;
     width: (15px * 3);
+
 		background: linear-gradient(-45deg, transparent 33%, transparent 0%, transparent 66%, $black 0%),linear-gradient(45deg, $black 0, transparent 0%, transparent 66%, $black 0%);
     background-size: 8px 6px;
     background-repeat: repeat-x;
@@ -123,6 +118,7 @@
     top: 100%;
     left: 23%;
     width: (15px * 3);
+
 		background: linear-gradient(55deg, $black 0, transparent 0, transparent 66%, $black 0);
 		background-size: 15px 60px;
     background-repeat: repeat-x;
@@ -133,6 +129,7 @@
     top: 100%;
     right: 0;
     border-radius: 0 0 2.5em 0em;
+
 		background: linear-gradient(35deg, $black 0, transparent 0%, transparent 66%, $black 0%), linear-gradient(-40deg, transparent 33%, transparent 0%, transparent 66%, $black 0%);
     background-size: 30 29px;
     background-repeat: repeat-x;
@@ -147,6 +144,7 @@
     @include pseudo;
     bottom: 100%;
     width: (15px * 3);
+
 		background: linear-gradient(70deg, $black 0, transparent 0, transparent 66%, $black 0);
 		background-size: 15px 80px;
     background-repeat: repeat-x;
@@ -158,6 +156,7 @@
     bottom: 90%;
     left: 45px;
     width: (7px * 2 - 1px);
+
 		background: linear-gradient(-125deg, $black 0, transparent 0, transparent 33%, $black 0);
 		background-size: 7px 18px;
     background-repeat: repeat-x;
@@ -180,82 +179,128 @@
 .eyes1 .right {
   position: absolute;
   left: 12%;
+
 	height: 40px;
   width: 40px;
+
   border: 1px solid $black;
 	border-radius: 50%;
-	background: $white;
+  background: $white;
+  
+  &::before {@include pupil; top: 70%;}
 }
 
-.eyes1 .right {
-  left: initial;
-  right: 12%;
-}
+.eyes1 .right {left: initial; right: 12%;}
 
-.eyes1 .left::before,
-.eyes1 .right::before {
-  @include pseudo;
-  top: 70%;
-  left: 50%;
-  height: 3px;
-  width: 3px;
-  background: $black;
-  transform: translateX(-50%);
-}
-
-.eyes2 {
-  top: 54%;
-}
+.eyes2 {top: 52%;}
 
 .eyes2 .left,
 .eyes2 .right {
   position: absolute;
   left: 16%;
-  height: 30px;
-  width: 30px;
-  border: 5px solid $black;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid transparent;
-  border-radius: 50%;
-  transform: rotate(-45deg);
+  height: 23px;
+  width: 28px;
+
+  border: 1px solid $black;
+  border-radius: 0em 4em 0em 4em;
+  background: $white;
+
+  transform: rotate(-35deg);
+
+  &::before {
+    @include pupil;
+    top: 22%;
+    left: 30%;
+  
+    height: 15px;
+    width: 15px;
+  
+    border: 8px solid $black;
+    border-top: 4px solid $black;
+    border-left: 4px solid $black;
+  
+    transform: rotate(25deg);
+  }
 }
 
 .eyes2 .right {
   left: initial;
   right: 16%;
+  border-radius: 4em 0em 4em 0em;
+  transform: rotate(35deg);
+
+  &::before {top: 7%; transform: rotate(-25deg);}
 }
 
-.eyes3 {
-  top: 62%;
-}
+
+.eyes3 {top: 60%;}
 
 .eyes3 .left,
 .eyes3 .right {
   position: absolute;
   left: 25%;
+
   height: 10px;
   width: 20px;
+
   border: 1px solid $black;
   border-radius: 0 0 4em 4em;
   background: $white;
+
+  &::before {
+    @include pupil;
+    top: 0;
+    left: 60%;
+    height: 6px;
+    width: 5px;
+    border-radius: 0 0 1em 1em;
+  }
 }
 
-.eyes3 .right {
-  left: initial;
-  right: 25%;
+.eyes3 .right {left: initial; right: 25%;}
+
+.eyes4 {top: 54%;}
+
+.eyes4 .left,
+.eyes4 .right {
+  position: absolute;
+  left: 16%;
+
+  height: 30px;
+  width: 30px;
+
+  border-top: 3px solid $black;
+  border-right: 3px solid $black;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-radius: 50%;
+
+  transform: rotate(-45deg);
 }
 
-.eyes3 .left::before,
-.eyes3 .right::before {
-  @include pseudo;
-  top: 70%;
-  left: 50%;
-  height: 3px;
-  width: 3px;
-  background: $black;
-  transform: translateX(-50%);
+.eyes4 .right {left: initial; right: 16%;}
+
+
+.eyes5 {top: 54%;}
+
+.eyes5 .left,
+.eyes5 .right {
+  position: absolute;
+  left: 16%;
+
+  height: 15px;
+  width: 30px;
+
+  border-top: 1px solid transparent;
+  border-right: 1px solid $black;
+  border-bottom: 3px solid $black;
+  border-left: 1px solid transparent;
+  border-radius: 40%;
+
+  // transform: rotate(-90deg);
 }
 
+.eyes5 .right {left: initial; right: 16%;}
 // eyes end
 
 // mouth start
@@ -263,13 +308,14 @@
   position: absolute;
   top: 83%;
   left: 50%;
-  transform: translateX(-50%);
-
+  
   height: 3px;
   width: 20px;
   border-radius: 1em;
-  background: $black;
   border: 1px solid $black;
+
+  background: $black;
+  transform: translateX(-50%);
 }
 
 .mouth1, .mouth2, .mouth3, .mouth4, .mouth5 {@extend %mouth;}
@@ -282,11 +328,13 @@
 
 .mouth2 {
   top: 86%;
+
   border-top: 2px solid $black;
   border-left: 15px solid $black;
   border-right: 5px solid transparent;
   border-bottom: 2px solid transparent;
   border-radius: 20%;
+
   background: none;
 }
 
@@ -294,11 +342,13 @@
   top: 66%;
   height: 35px;
   width: 40px;
+
   border-top: 3px solid transparent;
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
   border-bottom: 3px solid $black;
   border-radius: 0 0 5em 5em;
+
   background: none;
 }
 
@@ -320,13 +370,16 @@
   position: absolute;
   top: 67%;
   left: 50%;
+
 	height: 15px;
   width: 15px;
+
   border-top: 1px solid transparent;
   border-right: 1px solid transparent;
   border-left: 1px solid transparent;
   border-bottom: 3px solid $black;
   border-radius: 50%;
+
   transform: translateX(-50%);
 }
 
@@ -342,6 +395,7 @@
   top: 70%;
   height: 10px;
   width: 15px;
+
   border-right: 1px solid $black;
   border-left: 1px solid $black;
   border-bottom: 2px solid $black;
@@ -350,15 +404,18 @@
 .nose4 {
   height: 18px;
   width: 10px;
+
   border-radius: 0 0 0 5px;
   border-left: 1px solid $black;
   border-bottom: 2px solid $black;
+
   transform: translateX(-50%) rotate(20deg);
 }
 
 .nose5 {
   width: 14px;
   left: 45%;
+
   border: none;
   border-bottom: 2px solid $black;
   border-radius: 17%;
@@ -368,6 +425,7 @@
     top: 0;
     height: 15px;
     width: 13px;
+
     border: none;
     border-bottom: 1px solid $black;
     transform: translate(30%, 40%) rotate(140deg);
@@ -379,12 +437,15 @@
   bottom: -20%;
   left: 50%;
   z-index: -4;
+
   height: 0;
   width: 60px;
+
   border-bottom: 50px solid $color1;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-radius: 0 0 2% 2%;
+
   transform: translateX(-50%) translateZ(-3px);
   transform-style: preserve-3d;
 }

@@ -502,11 +502,6 @@ code {
   background: #f6f6f6;
 }
 
-.eyes1 .right {
-  left: initial;
-  right: 12%;
-}
-
 .eyes1 .left::before,
 .eyes1 .right::before {
   content: '';
@@ -514,40 +509,87 @@ code {
   display: block;
   height: 100%;
   width: 100%;
-  top: 70%;
+  top: 50%;
   left: 50%;
-  height: 3px;
-  width: 3px;
-  background: #2e2e2e;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  border: 3px solid #2e2e2e;
+  border-top: 1px solid #2e2e2e;
+  border-left: 1px solid #2e2e2e;
+  background: #f6f6f6;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  top: 70%;
+}
+
+.eyes1 .right {
+  left: initial;
+  right: 12%;
 }
 
 .eyes2 {
-  top: 54%;
+  top: 52%;
 }
 
 .eyes2 .left,
 .eyes2 .right {
   position: absolute;
   left: 16%;
-  height: 30px;
-  width: 30px;
-  border: 5px solid #2e2e2e;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid transparent;
+  height: 23px;
+  width: 28px;
+  border: 1px solid #2e2e2e;
+  border-radius: 0em 4em 0em 4em;
+  background: #f6f6f6;
+  -webkit-transform: rotate(-35deg);
+          transform: rotate(-35deg);
+}
+
+.eyes2 .left::before,
+.eyes2 .right::before {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  height: 7px;
+  width: 7px;
   border-radius: 50%;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  border: 3px solid #2e2e2e;
+  border-top: 1px solid #2e2e2e;
+  border-left: 1px solid #2e2e2e;
+  background: #f6f6f6;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 22%;
+  left: 30%;
+  height: 15px;
+  width: 15px;
+  border: 8px solid #2e2e2e;
+  border-top: 4px solid #2e2e2e;
+  border-left: 4px solid #2e2e2e;
+  -webkit-transform: rotate(25deg);
+          transform: rotate(25deg);
 }
 
 .eyes2 .right {
   left: initial;
   right: 16%;
+  border-radius: 4em 0em 4em 0em;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+}
+
+.eyes2 .right::before {
+  top: 7%;
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
 }
 
 .eyes3 {
-  top: 62%;
+  top: 60%;
 }
 
 .eyes3 .left,
@@ -561,11 +603,6 @@ code {
   background: #f6f6f6;
 }
 
-.eyes3 .right {
-  left: initial;
-  right: 25%;
-}
-
 .eyes3 .left::before,
 .eyes3 .right::before {
   content: '';
@@ -573,26 +610,86 @@ code {
   display: block;
   height: 100%;
   width: 100%;
-  top: 70%;
+  top: 50%;
   left: 50%;
-  height: 3px;
-  width: 3px;
-  background: #2e2e2e;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  border: 3px solid #2e2e2e;
+  border-top: 1px solid #2e2e2e;
+  border-left: 1px solid #2e2e2e;
+  background: #f6f6f6;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  top: 0;
+  left: 60%;
+  height: 6px;
+  width: 5px;
+  border-radius: 0 0 1em 1em;
+}
+
+.eyes3 .right {
+  left: initial;
+  right: 25%;
+}
+
+.eyes4 {
+  top: 54%;
+}
+
+.eyes4 .left,
+.eyes4 .right {
+  position: absolute;
+  left: 16%;
+  height: 30px;
+  width: 30px;
+  border-top: 3px solid #2e2e2e;
+  border-right: 3px solid #2e2e2e;
+  border-bottom: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-radius: 50%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.eyes4 .right {
+  left: initial;
+  right: 16%;
+}
+
+.eyes5 {
+  top: 54%;
+}
+
+.eyes5 .left,
+.eyes5 .right {
+  position: absolute;
+  left: 16%;
+  height: 15px;
+  width: 30px;
+  border-top: 1px solid transparent;
+  border-right: 1px solid #2e2e2e;
+  border-bottom: 3px solid #2e2e2e;
+  border-left: 1px solid transparent;
+  border-radius: 40%;
+}
+
+.eyes5 .right {
+  left: initial;
+  right: 16%;
 }
 
 .mouth1, .mouth2, .mouth3, .mouth4, .mouth5 {
   position: absolute;
   top: 83%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   height: 3px;
   width: 20px;
   border-radius: 1em;
-  background: #2e2e2e;
   border: 1px solid #2e2e2e;
+  background: #2e2e2e;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .mouth1 {
@@ -803,21 +900,35 @@ code {
 }
 
 .FeaturesSelection .featureButton .eyes1 .left {
-  left: 24%;
+  left: 23%;
 }
 
 .FeaturesSelection .featureButton .eyes1 .right {
-  left: initial;
-  right: 24%;
+  right: 23%;
 }
 
-.FeaturesSelection .featureButton .eyes2 .left {
-  left: 26%;
+.FeaturesSelection .featureButton .eyes2, .FeaturesSelection .featureButton .eyes4, .FeaturesSelection .featureButton .eyes5 {
+  top: 35%;
 }
 
-.FeaturesSelection .featureButton .eyes2 .right {
-  left: initial;
-  right: 26%;
+.FeaturesSelection .featureButton .eyes2 .left, .FeaturesSelection .featureButton .eyes4 .left, .FeaturesSelection .featureButton .eyes5 .left {
+  left: 25%;
+}
+
+.FeaturesSelection .featureButton .eyes2 .right, .FeaturesSelection .featureButton .eyes4 .right, .FeaturesSelection .featureButton .eyes5 .right {
+  right: 25%;
+}
+
+.FeaturesSelection .featureButton .eyes3 {
+  top: 40%;
+}
+
+.FeaturesSelection .featureButton .eyes3 .left {
+  left: 32%;
+}
+
+.FeaturesSelection .featureButton .eyes3 .right {
+  right: 32%;
 }
 
 .FeaturesSelection .featureButton .nose {
