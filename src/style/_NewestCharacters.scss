@@ -1,0 +1,49 @@
+.newestCharacters {
+  width: 100%;
+
+  .character {
+    height: 150px * $heightScaling;
+    width: 150px * $widthScaling;
+    margin-bottom: 30px;
+  }
+  // remove blink animation:
+  .eyes1, .eyes2, .eyes3 {.left, .right {animation-name: none;}}
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+  }
+
+  li {
+    flex: 1 1 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 25px;
+    border: 1px solid $color3;
+    margin: 5px;
+    border-radius: 0 2em;
+
+    background: lighten($color2, 25%);
+    box-shadow: 3px 3px 0px $color3;
+
+    &::before {
+      @include pseudo;
+      width: 1px;
+      top: 10px;
+      height: calc(100% - 20px);
+      background: $grey;
+    }
+  }
+
+  h3 {
+    position: absolute;
+    left: 15px;
+    bottom: 5px;
+    margin: 0;
+    
+    transform-origin: left;
+    transform: rotate(-90deg);
+  }
+}
