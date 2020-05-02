@@ -32,7 +32,7 @@
 	top: -2px;
   left: 50%;
 
-  width: calc(100% + 8px);
+  width: calc(107%);
   height: 40%;
   border-radius: 1.5em 1.5em 0 0;
 
@@ -49,7 +49,7 @@
     top: 100%;
     
 		background: linear-gradient(55deg, $black 0, transparent 0%, transparent 66%, $black 0%), linear-gradient(-55deg, transparent 33%, transparent 0%, transparent 66%, $black 0%);
-		background-size: 20px 20px;
+		background-size: 20% 20%;
     background-repeat: repeat-X;
   }
 }
@@ -62,10 +62,10 @@
     @include pseudo;
     bottom: 99%;
     left: 40%;
-    width: (15px * 3 - 1px);
+    width: 35%;
 
 		background: linear-gradient(-25deg, $black 0, transparent 0, transparent 66%, $black 0);
-		background-size: 15px 15px;
+		background-size: 35% 20%;
     background-repeat: repeat-x;
 
     transform: rotate(180deg) ;
@@ -89,24 +89,13 @@
   &::before {
     @include pseudo;
     bottom: 99%;
-    width: (15px * 3);
+    width: 35%;
 
 		background: linear-gradient(65deg, $black 0, transparent 0, transparent 66%, $black 0);
-		background-size: 15px 60px;
+		background-size: 35% 90%;
     background-repeat: repeat-x;
 
     transform: rotate(180deg) ;
-  }
-
-  &::after {
-    @include pseudo;
-    top: 99%;
-    right: 27px;
-    width: (15px * 3);
-
-		background: linear-gradient(-45deg, transparent 33%, transparent 0%, transparent 66%, $black 0%),linear-gradient(45deg, $black 0, transparent 0%, transparent 66%, $black 0%);
-    background-size: 8px 6px;
-    background-repeat: repeat-x;
   }
 }
 
@@ -118,10 +107,10 @@
     @include pseudo;
     top: 99%;
     left: 23%;
-    width: (15px * 3);
+    width: 45%;
 
 		background: linear-gradient(55deg, $black 0, transparent 0, transparent 66%, $black 0);
-		background-size: 15px 60px;
+		background-size: 32% 100%;
     background-repeat: repeat-x;
   }
 
@@ -132,7 +121,7 @@
     border-radius: 0 0 2.5em 0em;
 
 		background: linear-gradient(35deg, $black 0, transparent 0%, transparent 66%, $black 0%), linear-gradient(-40deg, transparent 33%, transparent 0%, transparent 66%, $black 0%);
-    background-size: 30 29px;
+    background-size: 100% 100%;
     background-repeat: repeat-x;
   }
 }
@@ -144,10 +133,10 @@
   &::before {
     @include pseudo;
     bottom: 99%;
-    width: (15px * 3);
+    width: 40%;
 
 		background: linear-gradient(70deg, $black 0, transparent 0, transparent 66%, $black 0);
-		background-size: 15px 80px;
+		background-size: 35% 120%;
     background-repeat: repeat-x;
     transform: rotate(180deg) ;
   }
@@ -155,11 +144,11 @@
   &::after {
     @include pseudo;
     bottom: 90%;
-    left: 45px;
-    width: (7px * 2 - 1px);
+    left: 40%;
+    width: 11%;
 
 		background: linear-gradient(-125deg, $black 0, transparent 0, transparent 33%, $black 0);
-		background-size: 7px 18px;
+		background-size: 55% 23%;
     background-repeat: repeat-x;
     background-position: bottom left;
   }
@@ -170,6 +159,7 @@
 %eyes {
   position: absolute;
   top: 40%;
+  height: 70%;
   width: 100%;
 	z-index: -3;
 }
@@ -181,8 +171,8 @@
   position: absolute;
   left: 12%;
 
-	height: 40px;
-  width: 40px;
+	height: 40%;
+  width: 40%;
 
   border: 1px solid $black;
 	border-radius: 50%;
@@ -199,8 +189,8 @@
 .eyes2 .right {
   position: absolute;
   left: 16%;
-  height: 23px;
-  width: 28px;
+  height: 23%;
+  width: 28%;
 
   border: 1px solid $black;
   border-radius: 0em 4em 0em 4em;
@@ -241,8 +231,8 @@
   position: absolute;
   left: 25%;
 
-  height: 10px;
-  width: 20px;
+  height: 10%;
+  width: 20%;
 
   border: 1px solid $black;
   border-radius: 0 0 4em 4em;
@@ -252,8 +242,8 @@
     @include pupil;
     top: 0;
     left: 60%;
-    height: 6px;
-    width: 5px;
+    height: 80%;
+    width: 30%;
     border-radius: 0 0 1em 1em;
   }
 }
@@ -267,8 +257,8 @@
   position: absolute;
   left: 16%;
 
-  height: 30px;
-  width: 30px;
+  height: 30%;
+  width: 30%;
 
   border-top: 3px solid $black;
   border-right: 3px solid $black;
@@ -289,8 +279,8 @@
   position: absolute;
   left: 16%;
 
-  height: 15px;
-  width: 30px;
+  height: 15%;
+  width: 30%;
 
   border-top: 1px solid transparent;
   border-right: 1px solid $black;
@@ -308,8 +298,8 @@
   top: 83%;
   left: 50%;
   
-  height: 3px;
-  width: 20px;
+  height: 3%;
+  width: 20%;
   border-radius: 1em;
   border: 1px solid $black;
 
@@ -320,7 +310,7 @@
 .mouth1, .mouth2, .mouth3, .mouth4, .mouth5 {@extend %mouth;}
 
 .mouth1 {
-  height: 10px;
+  height: 8%;
   border-radius: 0 0 4em 4em;
   background: darkred;
 }
@@ -339,8 +329,8 @@
 
 .mouth3 {
   top: 66%;
-  height: 35px;
-  width: 40px;
+  height: 25%;
+  width: 40%;
 
   border-top: 3px solid transparent;
   border-left: 1px solid transparent;
@@ -353,14 +343,15 @@
 
 .mouth4 {
   top: 82%;
-  height: 15px;
+  height: 13%;
+  width: 40%;
   background: darkred;
 }
 
 .mouth5 {
   top: 85%;
-  height: 10px;
-  width: 10px;
+  height: 7%;
+  width: 10%;
   background: darkred;
 }
 // mouth end
@@ -370,8 +361,8 @@
   top: 67%;
   left: 50%;
 
-	height: 15px;
-  width: 15px;
+	height: 15%;
+  width: 15%;
 
   border-top: 1px solid transparent;
   border-right: 1px solid transparent;
@@ -392,8 +383,8 @@
 
 .nose3 {
   top: 70%;
-  height: 10px;
-  width: 15px;
+  height: 7%;
+  width: 12%;
 
   border-right: 1px solid $black;
   border-left: 1px solid $black;
@@ -401,8 +392,8 @@
 }
 
 .nose4 {
-  height: 18px;
-  width: 10px;
+  height: 14%;
+  width: 10%;
 
   border-radius: 0 0 0 5px;
   border-left: 1px solid $black;
@@ -412,8 +403,9 @@
 }
 
 .nose5 {
-  width: 14px;
-  left: 45%;
+  top: 63%;
+  left: 48%;
+  width: 10%;
 
   border: none;
   border-bottom: 2px solid $black;
@@ -421,13 +413,13 @@
 
   &::after {
     @include pseudo;
-    top: 0;
-    height: 15px;
-    width: 13px;
+    top: 73%;
+    height: 15%;
+    width: 100%;
 
     border: none;
     border-bottom: 1px solid $black;
-    transform: translate(30%, 40%) rotate(140deg);
+    transform: rotate(140deg);
   }
 }
 
@@ -437,7 +429,7 @@
   left: 50%;
   z-index: -4;
 
-  height: 0;
+  height: 36%;
   width: 60px;
 
   border-bottom: 50px solid $color1;
@@ -453,7 +445,8 @@
 
 %legs {
   position: absolute;
-  top: 52px;
+  top: 105%;
+  width: 100%;
   transform-style: preserve-3d;
 
   &::before,
@@ -491,8 +484,7 @@
 
 .body2 {
   top: 86%;
-  height: 50px;
-  width: 80px;
+  width: 70%;
   border: 1px solid $black;
   border-bottom: 3px solid $black;
   border-radius: 3em 3em 50% 50%;
@@ -500,16 +492,14 @@
 
   .legs {
     @extend %legs;
-    top: 48px;
-    &::before {left: 9px;}
-    &::after {left: 39px;}
+    &::before {left: 7%;}
+    &::after {left: 50%;}
   } 
 }
 
 .body3 {
   top: 86%;
-  height: 50px;
-  width: 40px;
+  width: 40%;
   border: 1px solid $black;
   border-bottom: 3px solid $black;
   border-radius: 1em;
@@ -517,46 +507,29 @@
 
   .legs {
     @extend %legs;
-    top: 48px;
-    &::before {left: -11px;}
-    &::after {left: 19px;}
+    &::before {left: -27%;}
+    &::after {left: 49%;}
   } 
 }
 
 .body4 {
-  height: 0;
-  width: 65px;
-
-  border-top: 50px solid $color4;
-  border-left: 15px solid transparent;
-  border-bottom: 0px solid transparent;
-  border-right: 15px solid transparent;
-  border-radius: 0 0 2% 2%;
-
-  &::after { // border for body
-    @include pseudo;
-    bottom: calc(100% - 3px);
-    left: 50%;
-    width: 68px;
-    border-top: 53px solid $black;
-    border-left: 15px solid transparent;
-    border-bottom: 1px solid transparent;
-    border-right: 15px solid transparent;
-    transform: translateX(-50%) translateZ(-3px);
-  }
+  top: 86%;
+  width: 60%;
+  border: 1px solid $black;
+  border-bottom: 3px solid $black;
+  border-radius: 4em 4em 1em 1em;
+  background: $color4;
 
   .legs {
     @extend %legs;
-    top: 1px;
-    &::before {left: -13px;}
-    &::after {left: 17px;}
-  }  
+    &::before {left: -2%;}
+    &::after {left: 48%;}
+  } 
 }
 
 .body5 {
   top: 86%;
-  height: 50px;
-  width: 70px;
+  width: 60%;
   border: 1px solid $black;
   border-bottom: 3px solid $black;
   border-radius: 50% 50% 2em 2em;
@@ -564,8 +537,7 @@
 
   .legs {
     @extend %legs;
-    top: 48px;
-    &::before {left: 4px;}
-    &::after {left: 34px;}
+    &::before {left: -2%;}
+    &::after {left: 48%;}
   } 
 }

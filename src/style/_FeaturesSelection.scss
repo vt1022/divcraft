@@ -41,41 +41,47 @@ $buttonMargin: 3px;
     }
 
     .eyes {
-      top: 30%;
+      top: 75%;
       left: 50%;
       z-index: 3;
+      width: 70%;
       transform: translate(-50%, -50%) scale(1.2);
     }
 
-    .eyes1 {
-      .left {left: 23%;}
-      .right {right: 23%;}
-    }
+    // .eyes1, .eyes2, .eyes3, .eyes4 {
+    //   width: 70%;
+    // }
 
-    .eyes2, .eyes4, .eyes5 {
-      top: 35%;
-      .left {left: 25%;}
-      .right {right: 25%;}
-    }
+    // .eyes2, .eyes4, .eyes5 {
+      // top: 75%;
+    //   .left {left: 25%;}
+    //   .right {right: 25%;}
+    // }
 
     .eyes3 {
-      top: 40%;
-      .left {left: 32%;}
-      .right {right: 32%;}
+      top: 80%;
+    //   .left {left: 32%;}
+    //   .right {right: 32%;}
     }
 
     .nose {
       top: 50%;
       transform: translateX(-50%) scale(2);
 
-      &.nose4 {transform: translateX(-50%) rotate(20deg) scale(2);}
+      &.nose1 {top: 30%;  height: 18%;}
+      &.nose3 {width: 8%;}
+      &.nose4 {top: 45%; transform: translateX(-50%) rotate(30deg) scale(2);}
+      &.nose5 {top: 35%; &::after {top: 67%;left: -5%;}}
     }
 
     .mouth {
       top: 50%;
+      width: 13%;
       transform: translateX(-50%) scale(2);
 
       &.mouth3 {top: 25%;}
+      &.mouth4 {width: 24%;}
+      &.mouth5 {width: 7%;}
     }
     
     .body {

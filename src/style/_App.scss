@@ -1,4 +1,4 @@
-body {background: $color4;}
+body {background: lighten($color4, 10%);}
 
 .App {
   @include flexCenter();
@@ -21,10 +21,10 @@ ul {
   width: 100%;
   margin-top: 20px;
   padding: 30px;
-  border: 1px solid $color3;
+  border: 2px solid $color3;
   border-radius: 0 2em;
 
-  background: $white;
+  background: lighten($color2, 25%);
   transform-style: preserve-3d;
   box-shadow: 5px 5px 0px $color3;
 }
@@ -36,7 +36,7 @@ ul {
   
   height: 30px;
   width: calc(100% - 10px);
-  border-bottom: 1px solid green;
+  border-bottom:2px solid darken(#bef175, 20%);
 
   background: linear-gradient(125deg, #bef175 0, transparent 0%, transparent 66%, #bef175 0%), linear-gradient(-125deg, transparent 33%, transparent 0%, transparent 66%, #bef175 0%);
   background-size: 20px 20px;
