@@ -1,8 +1,11 @@
+$widthScaling: 0.7;
+$heightScaling: 1.3;
+
 .character {
 	position: relative;
 	margin: auto;
-	height: 350px;
-  width: 350px;
+	height: 200px * $heightScaling;
+  width: 200px * $widthScaling;
   transform: translateZ(1px);
 }
 // head start
@@ -10,13 +13,31 @@
 	position: absolute;
   top: 25%;
   left: 50%;
-	height: 40%;
-  width: 30%;
+	height: 80% * $widthScaling;
+  width: 60% * $heightScaling;
   border: 1px solid $black;
 	border-radius: 40% 40% 50% 50%;
   background: tan;
   transform: translateX(-50%);
   transform-style: preserve-3d;
+  // shoes:
+  &::before,
+  &::after {
+    @include pseudo;
+    top: 122%;
+    left: 22%;
+    height: 9%;
+    width: 28%;
+
+    border: 1px solid $black;
+    border-bottom: 3px solid $black;
+    border-radius: 4em;
+    
+    background: $white;
+    transform: translateZ(-3px);
+  }
+
+  &::after {left: initial; right: 22%;}
 }
 
 .head1, .head2, .head3, .head4, .head5 {@extend %head;}
@@ -77,9 +98,10 @@
     
 		background: linear-gradient(-35deg, $black 0, transparent 0%, transparent 80%, $black 0%);
 		background-size: 100px 100px;
-		background-repeat: no-repeat;
+    background-repeat: no-repeat;
   }
 }
+
 
 .hair3 {
   height: 50%;
@@ -164,7 +186,20 @@
 	z-index: -3;
 }
 
-.eyes1, .eyes2, .eyes3, .eyes4, .eyes5 {@extend %eyes;}
+.eyes1, .eyes2, .eyes3, .eyes4, .eyes5 {
+  @extend %eyes;
+}
+
+.eyes1, .eyes2, .eyes3 {
+  .left, .right {
+    animation-name: blink;
+    animation-timing-function: linear;
+    animation-duration: 6s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forward;
+  }
+}
 
 .eyes1 .left,
 .eyes1 .right {
@@ -177,7 +212,7 @@
   border: 1px solid $black;
 	border-radius: 50%;
   background: $white;
-  
+
   &::before {@include pupil; top: 70%;}
 }
 
@@ -188,39 +223,32 @@
 .eyes2 .left,
 .eyes2 .right {
   position: absolute;
-  left: 16%;
+  left: 17%;
   height: 23%;
   width: 28%;
 
   border: 1px solid $black;
-  border-radius: 0em 4em 0em 4em;
+  border-radius: 0em 1em 0em 1em;
   background: $white;
-
-  transform: rotate(-35deg);
 
   &::before {
     @include pupil;
-    top: 22%;
-    left: 30%;
+    top: 15%;
+    left: 60%;
   
-    height: 15px;
-    width: 15px;
+    height: 70%;
+    width: 50%;
   
-    border: 8px solid $black;
-    border-top: 4px solid $black;
-    border-left: 4px solid $black;
-  
-    transform: rotate(25deg);
+    border: 6px solid $black;
+    border-top: 2px solid $black;
+    border-left: 2px solid $black;
   }
 }
 
 .eyes2 .right {
   left: initial;
-  right: 16%;
-  border-radius: 4em 0em 4em 0em;
-  transform: rotate(35deg);
-
-  &::before {top: 7%; transform: rotate(-25deg);}
+  right: 17%;
+  border-radius: 1em 0em 1em 0em;
 }
 
 
@@ -358,7 +386,7 @@
 
 %nose {
   position: absolute;
-  top: 67%;
+  top: 64%;
   left: 50%;
 
 	height: 15%;
@@ -374,6 +402,8 @@
 }
 
 .nose1, .nose2, .nose3, .nose4, .nose5 {@extend %nose;}
+
+.nose1 {border-radius: 30%;}
 
 .nose2 {
   top: 72%;
@@ -395,16 +425,16 @@
   height: 14%;
   width: 10%;
 
-  border-radius: 0 0 0 5px;
-  border-left: 1px solid $black;
+  border-radius: 0 0 5px 0;
+  border-right: 1px solid $black;
   border-bottom: 2px solid $black;
 
-  transform: translateX(-50%) rotate(20deg);
+  transform: translateX(-50%) rotate(-20deg);
 }
 
 .nose5 {
   top: 63%;
-  left: 48%;
+  left: 52%;
   width: 10%;
 
   border: none;
@@ -413,29 +443,26 @@
 
   &::after {
     @include pseudo;
-    top: 73%;
+    top: 83%;
     height: 15%;
     width: 100%;
 
     border: none;
     border-bottom: 1px solid $black;
-    transform: rotate(140deg);
+    transform: rotate(40deg);
+    transform-origin: right;
   }
 }
 
 %body {
   position: absolute;
-  bottom: -20%;
+  top: 86%;
   left: 50%;
   z-index: -4;
 
   height: 36%;
-  width: 60px;
-
-  border-bottom: 50px solid $color1;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-radius: 0 0 2% 2%;
+  border: 1px solid $black;
+  border-bottom: 3px solid $black;
 
   transform: translateX(-50%) translateZ(-3px);
   transform-style: preserve-3d;
@@ -443,101 +470,44 @@
 
 .body1, .body2, .body3, .body4, .body5 {@extend %body;}
 
-%legs {
-  position: absolute;
-  top: 105%;
-  width: 100%;
-  transform-style: preserve-3d;
-
-  &::before,
-  &::after {
-    @include pseudo;
-    left: -10px;
-    height: 10px;
-    width: 30px;
-
-    border-top: 1px solid transparent;
-    border-right: 1px solid $black;
-    border-bottom: 3px solid $black;
-    border-left: 1px solid $black;
-    border-radius: 40%;
-    
-    background: $white;
-    transform: translateZ(-3px);
-  }
-
-  &::after {left: initial; right: -50px;}
-}
-
 .body1 {
-  &::after { // border for body
-    @extend %body;
-    @include pseudo;
-    top: 0;
-    left: 50%;
-    width: 62px;
-    border-bottom: 52px solid $black;
-    transform: translateX(-50%) translateZ(-3px);
-  }
-  .legs {@extend %legs;}  
+  width: 50%;
+  border-radius: 7em 7em 50% 50%;
+  background: $color1;
 }
 
 .body2 {
-  top: 86%;
-  width: 70%;
-  border: 1px solid $black;
-  border-bottom: 3px solid $black;
-  border-radius: 3em 3em 50% 50%;
+  width: 85%;
+  border-radius: 7em 7em 50% 50%;
   background: $color2;
-
-  .legs {
-    @extend %legs;
-    &::before {left: 7%;}
-    &::after {left: 50%;}
-  } 
 }
 
 .body3 {
-  top: 86%;
-  width: 40%;
-  border: 1px solid $black;
-  border-bottom: 3px solid $black;
-  border-radius: 1em;
+  width: 20%;
+  border-radius: 2em 2em 50% 50%;
   background: $color3;
-
-  .legs {
-    @extend %legs;
-    &::before {left: -27%;}
-    &::after {left: 49%;}
-  } 
 }
 
 .body4 {
-  top: 86%;
+  top: 96%;
+  height: 27%;
   width: 60%;
-  border: 1px solid $black;
-  border-bottom: 3px solid $black;
-  border-radius: 4em 4em 1em 1em;
+  border-radius: 1em 1em 4em 4em;
   background: $color4;
-
-  .legs {
-    @extend %legs;
-    &::before {left: -2%;}
-    &::after {left: 48%;}
-  } 
 }
 
 .body5 {
-  top: 86%;
   width: 60%;
-  border: 1px solid $black;
-  border-bottom: 3px solid $black;
-  border-radius: 50% 50% 2em 2em;
+  border-radius: 2em 7em 50% 20%;
   background: $grey;
-
-  .legs {
-    @extend %legs;
-    &::before {left: -2%;}
-    &::after {left: 48%;}
-  } 
 }
+
+@keyframes blink {
+  0%, 3%, 100% {
+    transform: scale(1);
+  }
+  1% {
+    transform: translateY(20%) scaleY(0.1);
+  }
+}
+

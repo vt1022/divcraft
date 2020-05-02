@@ -34,11 +34,6 @@ class FeaturesSelection extends Component {
                         </>
                       : <></>
                   }
-                  { // add legs for body
-                    globalClass === "body"
-                      ? <div className="legs"></div>
-                      : <></>
-                  }
                 </div>
               </button>
             )

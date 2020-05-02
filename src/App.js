@@ -133,7 +133,12 @@ class App extends Component {
           <FadeIn>
             <form action="" onSubmit={this.handleSubmit}>
               <label htmlFor="characterName">Name:</label>
-              <input type="text" id="characterName" onChange={this.handleNameInput} value ={this.state.userCharacterName}/>
+              <input 
+                type="text" 
+                id="characterName" 
+                value ={this.state.userCharacterName}
+                onChange={this.handleNameInput} 
+              />
               <button>Create</button>
             </form>
           </FadeIn>

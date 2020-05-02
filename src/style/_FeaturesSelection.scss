@@ -23,6 +23,8 @@ $buttonMargin: 3px;
     margin: $buttonMargin;
     background: $white;
 
+    .head {&::before, &::after {content: none;}}
+
     .hair {
       top: 50%;
       left: 50%;
@@ -32,12 +34,13 @@ $buttonMargin: 3px;
       &.hair2 {top: 40%; height: 80%;}
       &.hair3 {height: 71%; transform: translate(-50%, -50%) rotate(180deg) scale(0.6);}
       &.hair4 {top: 40%; height: 45%;}
-      &.hair5 {height: 75%;}
+      &.hair5 {top: 60%; height: 75%;}
     }
 
     .head {
       top: 50%;
-      transform: translate(-50%, -50%) scale(1.4);
+      width: 50%;
+      transform: translate(-50%, -50%) scale(1);
     }
 
     .eyes {
@@ -46,23 +49,11 @@ $buttonMargin: 3px;
       z-index: 3;
       width: 70%;
       transform: translate(-50%, -50%) scale(1.2);
+
+      .left, .right {animation: none;}
+      &.eyes3 {top: 80%;}
     }
 
-    // .eyes1, .eyes2, .eyes3, .eyes4 {
-    //   width: 70%;
-    // }
-
-    // .eyes2, .eyes4, .eyes5 {
-      // top: 75%;
-    //   .left {left: 25%;}
-    //   .right {right: 25%;}
-    // }
-
-    .eyes3 {
-      top: 80%;
-    //   .left {left: 32%;}
-    //   .right {right: 32%;}
-    }
 
     .nose {
       top: 50%;
@@ -70,8 +61,8 @@ $buttonMargin: 3px;
 
       &.nose1 {top: 30%;  height: 18%;}
       &.nose3 {width: 8%;}
-      &.nose4 {top: 45%; transform: translateX(-50%) rotate(30deg) scale(2);}
-      &.nose5 {top: 35%; &::after {top: 67%;left: -5%;}}
+      &.nose4 {top: 45%; transform: translateX(-50%) rotate(-30deg) scale(2);}
+      &.nose5 {top: 35%; &::after {top: 84%;left: 5%;}}
     }
 
     .mouth {

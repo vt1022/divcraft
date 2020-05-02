@@ -15,7 +15,6 @@ class Character extends Component {
           <div className={nose}></div>
           <div className={mouth}></div>
           <div className={body}>
-            <div className="legs"></div>
           </div>
         </div>
       </div>
