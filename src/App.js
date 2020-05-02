@@ -112,6 +112,12 @@ class App extends Component {
     newCharObj['charStyles'][clickedFeature] = newFeatureCssClass
     this.setState({currentCharacter: newCharObj})
   }
+  // get info from FeaturesSelection.js and update state.currentChar
+  handleCharacterListClick = (charId) => {
+    const clickedCharacter = this.state.characterArray
+      .filter((character) => character.charId === charId)
+    this.setState({currentCharacter: clickedCharacter[0]})
+  }
 
   render() {
     const {body, hair, eyes, head, mouth, nose} = this.state.currentCharacter.charStyles
@@ -139,7 +145,7 @@ class App extends Component {
                 value ={this.state.userCharacterName}
                 onChange={this.handleNameInput} 
               />
-              <button>Create</button>
+              <button className="button">Create</button>
             </form>
           </FadeIn>
 
@@ -153,7 +159,10 @@ class App extends Component {
         </section>
 
         <section className="newestCharacters">
-          <NewestCharacters characterArray={characterArray} />
+            <NewestCharacters 
+              characterArray={characterArray}
+              handleCharacterListClick={this.handleCharacterListClick}  
+            />
         </section>
       </div>
     );

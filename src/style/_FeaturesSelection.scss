@@ -1,19 +1,15 @@
-$buttonSize: 150px;
+$buttonSize: 100px;
 $buttonMargin: 3px;
 
 .FeaturesSelection {
   position: relative;
   display: flex;
-  width: ($buttonSize * 5 + $buttonMargin * 10);
-  background: $color2;
 
-  ul {
-    position: absolute;
-    top: -23px;
-    left: 0;
-    display: flex;
-    background: $color2;
-  }
+  width: ($buttonSize * 5 + $buttonMargin * 10);
+  border: 1px solid darken($color2, 25%);
+  border-radius: 0 1em 0 1em;
+
+  background: $white;
 
   .featureButton {
     padding: 0;
@@ -21,7 +17,6 @@ $buttonMargin: 3px;
     flex: 0 0 $buttonSize;
     height: $buttonSize;
     margin: $buttonMargin;
-    background: $white;
 
     .head {&::before, &::after {content: none;}}
 
@@ -81,5 +76,36 @@ $buttonMargin: 3px;
       z-index: 3;
       transform: translate(-50%, -50%);
     }
+  }
+} // FeaturesSelection
+
+.featuresNav {
+  position: absolute;
+  bottom: 99%;
+  left: -1px;
+  display: flex;
+
+  padding-top: 3px;
+  padding-right: 10px;
+  // padding-bottom: 2px;
+  border: 1px solid darken($color2, 25%);
+  border-bottom: none;
+  border-radius: 0 10px 0 0;
+
+  background: $color2;
+  
+  li {
+    box-shadow: 1px 0px 2px darken($color2, 25%);
+  }
+
+  button {
+    @include fontSans(11);
+    padding: 2px 0;
+    padding-right: 0;
+    margin: 0 8px;
+    
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    @include cssShine;
   }
 }

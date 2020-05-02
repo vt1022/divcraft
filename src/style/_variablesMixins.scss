@@ -1,5 +1,5 @@
 // variables
-
+@import url('https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&family=Krub&display=swap');
 // font colours + pseudo states
 $white: #f6f6f6;
 $grey: #ccc;
@@ -31,6 +31,27 @@ $color4: #35A7FF;
   background: $white;
   transform: translateX(-50%);
 }
+// css shine by Yu-Ting, Cheng on codepen
+@mixin cssShine {
+  background-repeat: no-repeat;
+  // background-position: -120px -120px, 0 0;
+  background-position: 100% 100%, 0 0;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 37%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0) 50%
+  );
+
+  background-size: 250% 250%, 100% 100%;
+  transition: background-position 0s ease;
+
+  &:hover {
+    background-position: 0 0, 0 0;
+    transition-duration: 0.5s;
+  }
+}
 
 // vertical + horizontal centering w/ flexbox
 @mixin flexCenter() {
@@ -46,16 +67,16 @@ $color4: #35A7FF;
   font-size: ($sizeValue/10) * 1rem;
 }
 
-@mixin fontSans($size, $weight: 700, $color: $primaryBlack) {
+@mixin fontSans($size, $weight: 400, $color: $black) {
   @include fontSize($size);
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Krub', sans-serif;
   font-weight: $weight;
   color: $color;
 }
 
-@mixin fontSerif($size, $weight: 400, $color: $primaryBlack) {
+@mixin fontDisplay($size, $weight: 400, $color: $black) {
   @include fontSize($size);
-  font-family: 'Lora', serif;
+  font-family: 'Delius Unicase', cursive;
   font-weight: $weight;
   color: $color;
 }
