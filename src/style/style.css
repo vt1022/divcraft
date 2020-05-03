@@ -1518,6 +1518,12 @@ footer a {
   text-decoration: none;
 }
 
+@media (max-width: 900px) {
+  .charCreation form {
+    width: 60%;
+  }
+}
+
 @media (max-width: 690px) {
   .wrapper {
     width: 95%;
