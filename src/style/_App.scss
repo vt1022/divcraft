@@ -7,6 +7,13 @@ button {
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.wrapper {
   @include flexCenter();
   flex-direction: column;
   text-align: center;
@@ -31,7 +38,7 @@ ul {
   padding: 30px; 
   border: 2px solid $color3;
   border-radius: 0 2em;
-  margin-top: 20px;
+  margin-top: 15px;
 
   background: $white;
   transform-style: preserve-3d;
@@ -40,7 +47,7 @@ ul {
 
 .grass {
   position: absolute;
-  top: 45%;
+  top: 48%;
   left: 1.5%;
   
   height: 30px;
@@ -70,9 +77,47 @@ ul {
   }
 }
 
-form {
-  margin: 20px;
-  margin-bottom: 40px;
+.charCreation {
+  form {
+    display: flex;
+    width: 80%;
+    margin: 15px auto;
+    margin-bottom: 50px;
+    border-bottom: 1px solid $color4;
+    
+    label, button {@include fontDisplay(10);}
+
+    input {
+      @include fontSans(9, 700);
+      flex: 1 1 auto;
+
+      width: 30%;
+      margin: 0 5px;
+      border: 0;
+
+      background: none;
+    }
+
+    ::placeholder {
+      @include fontSans(9);
+    }
+
+    button {
+      padding: 0 4px;
+      border: 1px solid $color4;
+      border-radius: 1em;
+
+      background: $color4;
+      color: $white;
+
+      box-shadow: 1px 1px 0px $color3;
+      @include cssShine;
+
+      &:hover {
+        border: 1px solid $white;
+      }
+    }
+  }
 }
 
 @keyframes grass {

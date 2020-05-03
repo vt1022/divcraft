@@ -44,6 +44,7 @@
   }
 
   h3 {
+    @include fontSans(12);
     position: absolute;
     left: 15px;
     bottom: 5px;

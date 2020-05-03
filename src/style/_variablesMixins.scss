@@ -1,10 +1,11 @@
-// variables
+// import fonts
 @import url('https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&family=Krub&display=swap');
+// variables
 // font colours + pseudo states
 $white: #f6f6f6;
 $grey: #ccc;
 $black: #2e2e2e;
-$color1: #FF5964;
+$color1: #C0FF33;
 $color2: #FFE066;
 $color3: #38618C;
 $color4: #35A7FF;
@@ -34,7 +35,6 @@ $color4: #35A7FF;
 // css shine by Yu-Ting, Cheng on codepen
 @mixin cssShine {
   background-repeat: no-repeat;
-  // background-position: -120px -120px, 0 0;
   background-position: 100% 100%, 0 0;
   background-image: linear-gradient(
     -45deg,
@@ -49,17 +49,15 @@ $color4: #35A7FF;
 
   &:hover {
     background-position: 0 0, 0 0;
-    transition-duration: 0.5s;
+    transition-duration: 1s;
   }
 }
-
 // vertical + horizontal centering w/ flexbox
 @mixin flexCenter() {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 // fonts
 @mixin fontSize($sizeValue){
   // font sizes turn into rem values
@@ -84,7 +82,6 @@ $color4: #35A7FF;
 @mixin focusState() {
     outline: 6px dotted $secondaryColor;
 }
-
 // might be useful
 @mixin position($type, $top: auto, $bottom: auto, $left: auto, $right: auto) {
   position: $type;

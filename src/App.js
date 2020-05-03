@@ -124,46 +124,56 @@ class App extends Component {
     const {featuresToShowCss, characterArray} = this.state
     return (
       <div className="App">
-        <section className="charCreation">
+        <div className="wrapper">
+          <header>
+            <h1>DivCraft</h1>
+          </header>
 
-          <Character 
-            head={head}
-            hair={hair}
-            eyes={eyes}
-            nose={nose}
-            mouth={mouth}
-            body={body}
-          />
-          <div className="grass"></div>
+          <section className="charCreation">
+            <Character 
+              head={head}
+              hair={hair}
+              eyes={eyes}
+              nose={nose}
+              mouth={mouth}
+              body={body}
+            />
+            <div className="grass"></div>
 
-          <FadeIn>
-            <form action="" onSubmit={this.handleSubmit}>
-              <label htmlFor="characterName">Name:</label>
-              <input 
-                type="text" 
-                id="characterName" 
-                value ={this.state.userCharacterName}
-                onChange={this.handleNameInput} 
+            <FadeIn>
+              <form action="" onSubmit={this.handleSubmit}>
+                <label htmlFor="characterName">Name:</label>
+                <input 
+                  type="text" 
+                  id="characterName"
+                  placeholder="display name"
+                  value ={this.state.userCharacterName}
+                  onChange={this.handleNameInput} 
+                />
+                <button className="button">Create</button>
+              </form>
+            </FadeIn>
+
+            <FadeIn>
+              <FeaturesSelection 
+                selectedFeatureArray={featuresToShowCss} 
+                changeFeatureFunction={this.changeFeature}
+                featureNavClickFunction={this.handleFeatureNavClick}
               />
-              <button className="button">Create</button>
-            </form>
-          </FadeIn>
+            </FadeIn>
+          </section>
 
-          <FadeIn>
-            <FeaturesSelection 
-              selectedFeatureArray={featuresToShowCss} 
-              changeFeatureFunction={this.changeFeature}
-              featureNavClickFunction={this.handleFeatureNavClick}
-            />
-          </FadeIn>
-        </section>
+          <section className="newestCharacters">
+              <NewestCharacters 
+                characterArray={characterArray}
+                handleCharacterListClick={this.handleCharacterListClick}  
+              />
+          </section>
+        </div> {/* wrapper */}
 
-        <section className="newestCharacters">
-            <NewestCharacters 
-              characterArray={characterArray}
-              handleCharacterListClick={this.handleCharacterListClick}  
-            />
-        </section>
+        <footer>
+          <p><a href="https://twitter.com/vinccimantsui">@vinccimantsui</a> © 2020</p> 
+        </footer>
       </div>
     );
   }

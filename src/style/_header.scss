@@ -1,0 +1,17 @@
+header {
+  @include fontDisplay(16);
+  width: 100%;
+  border: 2px solid $color3;
+  border-radius: 0 1em;
+  margin-top: 15px;
+
+  background: $white;
+  text-align: center;
+  box-shadow: 5px 5px 0px $color3;
+
+  h1 {
+    color: $color4;
+    margin: 15px auto;
+    text-shadow: 1px 1px 1px $black;
+  }
+}
