@@ -1,4 +1,4 @@
-$buttonSize: 100px;
+$buttonSize: 90px;
 $buttonMargin: 3px;
 
 .FeaturesSelection {
@@ -7,17 +7,25 @@ $buttonMargin: 3px;
 
   width: ($buttonSize * 5 + $buttonMargin * 10);
   border: 1px solid darken($color1, 25%);
-  border-radius: 0 1em 0 1em;
+  border-radius: 0 1em;
 
   box-shadow: 2px 2px 0px darken($color1, 25%);
   background: lighten($color1, 20%);
 
   .featureButton {
-    padding: 0;
     position: relative;
     flex: 0 0 $buttonSize;
+    
     height: $buttonSize;
+    padding: 0;
+    border-radius: 1em;
     margin: $buttonMargin;
+    margin-top: 10px;
+
+    box-shadow: 1px 1px 0 transparent;
+    transition: all .3s ease-in;
+
+    &:hover{box-shadow: 2px 2px 0 darken($color1, 25%), -1px -1px 0 $white;}
 
     .head {&::before, &::after {content: none;}}
 
@@ -27,7 +35,7 @@ $buttonMargin: 3px;
       z-index: 3;
       transform: translate(-50%, -50%) scale(0.6);
 
-      &.hair2 {top: 40%; height: 80%;}
+      &.hair2 {top: 48%; height: 70%;}
       &.hair3 {height: 71%; transform: translate(-50%, -50%) rotate(180deg) scale(0.6);}
       &.hair4 {top: 40%; height: 45%;}
       &.hair5 {top: 60%; height: 75%;}
@@ -115,9 +123,7 @@ $buttonMargin: 3px;
     background: $color1;
     @include cssShine;
 
-    &:hover {
-      border-left: 1px solid $white;
-    }
+    &:hover {border-left: 1px solid $white;}
   }
 
   button {

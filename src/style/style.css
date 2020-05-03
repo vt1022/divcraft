@@ -368,7 +368,7 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 80%;
+  width: 40%;
   margin: 15px auto;
   margin-bottom: 50px;
   border-bottom: 1px solid #35A7FF;
@@ -383,8 +383,8 @@ ul {
 }
 
 .charCreation form input {
-  font-size: 9px;
-  font-size: 0.9rem;
+  font-size: 10px;
+  font-size: 1rem;
   font-family: 'Krub', sans-serif;
   font-weight: 700;
   color: #2e2e2e;
@@ -395,38 +395,46 @@ ul {
   margin: 0 5px;
   border: 0;
   background: none;
+  -webkit-box-shadow: 0px 3px 0 transparent;
+          box-shadow: 0px 3px 0 transparent;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .charCreation form ::-webkit-input-placeholder {
-  font-size: 9px;
-  font-size: 0.9rem;
+  font-size: 10px;
+  font-size: 1rem;
   font-family: 'Krub', sans-serif;
   font-weight: 400;
   color: #2e2e2e;
+  text-transform: uppercase;
 }
 
 .charCreation form :-ms-input-placeholder {
-  font-size: 9px;
-  font-size: 0.9rem;
+  font-size: 10px;
+  font-size: 1rem;
   font-family: 'Krub', sans-serif;
   font-weight: 400;
   color: #2e2e2e;
+  text-transform: uppercase;
 }
 
 .charCreation form ::-ms-input-placeholder {
-  font-size: 9px;
-  font-size: 0.9rem;
+  font-size: 10px;
+  font-size: 1rem;
   font-family: 'Krub', sans-serif;
   font-weight: 400;
   color: #2e2e2e;
+  text-transform: uppercase;
 }
 
 .charCreation form ::placeholder {
-  font-size: 9px;
-  font-size: 0.9rem;
+  font-size: 10px;
+  font-size: 1rem;
   font-family: 'Krub', sans-serif;
   font-weight: 400;
   color: #2e2e2e;
+  text-transform: uppercase;
 }
 
 .charCreation form button {
@@ -453,6 +461,11 @@ ul {
 
 .charCreation form button:hover {
   border: 1px solid #f6f6f6;
+}
+
+.charCreation form input:focus {
+  -webkit-box-shadow: 0px 3px 0 #38618C;
+          box-shadow: 0px 3px 0 #38618C;
 }
 
 @-webkit-keyframes grass {
@@ -483,6 +496,17 @@ ul {
   }
 }
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
 header {
   font-size: 16px;
   font-size: 1.6rem;
@@ -503,17 +527,6 @@ header h1 {
   color: #35A7FF;
   margin: 15px auto;
   text-shadow: 1px 1px 1px #2e2e2e;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .character {
@@ -685,7 +698,7 @@ code {
   display: block;
   height: 100%;
   width: 100%;
-  top: 99%;
+  top: 98%;
   right: 0;
   border-radius: 0 0 2.5em 0em;
   background: linear-gradient(35deg, #2e2e2e 0, transparent 0%, transparent 66%, #2e2e2e 0%), linear-gradient(-40deg, transparent 33%, transparent 0%, transparent 66%, #2e2e2e 0%);
@@ -1125,22 +1138,33 @@ code {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 530px;
+  width: 480px;
   border: 1px solid #7bb300;
-  border-radius: 0 1em 0 1em;
+  border-radius: 0 1em;
   -webkit-box-shadow: 2px 2px 0px #7bb300;
           box-shadow: 2px 2px 0px #7bb300;
   background: #e0ff99;
 }
 
 .FeaturesSelection .featureButton {
-  padding: 0;
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 100px;
-          flex: 0 0 100px;
-  height: 100px;
+      -ms-flex: 0 0 90px;
+          flex: 0 0 90px;
+  height: 90px;
+  padding: 0;
+  border-radius: 1em;
   margin: 3px;
+  margin-top: 10px;
+  -webkit-box-shadow: 1px 1px 0 transparent;
+          box-shadow: 1px 1px 0 transparent;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+.FeaturesSelection .featureButton:hover {
+  -webkit-box-shadow: 2px 2px 0 #7bb300, -1px -1px 0 #f6f6f6;
+          box-shadow: 2px 2px 0 #7bb300, -1px -1px 0 #f6f6f6;
 }
 
 .FeaturesSelection .featureButton .head::before, .FeaturesSelection .featureButton .head::after {
@@ -1156,8 +1180,8 @@ code {
 }
 
 .FeaturesSelection .featureButton .hair.hair2 {
-  top: 40%;
-  height: 80%;
+  top: 48%;
+  height: 70%;
 }
 
 .FeaturesSelection .featureButton .hair.hair3 {
@@ -1492,4 +1516,73 @@ footer a, footer p {
 footer a {
   color: #C0FF33;
   text-decoration: none;
+}
+
+@media (max-width: 690px) {
+  .wrapper {
+    width: 95%;
+  }
+  .grass {
+    top: 57%;
+  }
+  .charCreation {
+    position: relative;
+    height: 575px;
+    padding-left: 200px;
+  }
+  .charCreation .character {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  .charCreation form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 150px;
+    border: 0;
+    margin: 0;
+  }
+  .charCreation form input {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .charCreation form input, .charCreation form label {
+    margin-bottom: 5px;
+  }
+  .charCreation form label {
+    border-bottom: 1px solid #35A7FF;
+  }
+  .charCreation form button {
+    display: block;
+  }
+  .FeaturesSelection {
+    position: absolute;
+    top: calc(100% - 20px);
+    left: 40px;
+    border-radius: 0 0 1em 0;
+    -webkit-transform-origin: left top;
+            transform-origin: left top;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+  .FeaturesSelection .featureButton {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 390px) {
+  .FeaturesSelection {
+    left: 30px;
+  }
+  .charCreation {
+    padding: 0;
+    padding-right: 5px;
+  }
+  .charCreation .character, .charCreation form {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
 }

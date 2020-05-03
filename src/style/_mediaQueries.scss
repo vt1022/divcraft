@@ -1,0 +1,50 @@
+@media (max-width: 690px) {
+  .wrapper  {width: 95%;}
+  .grass {top: 57%;}
+
+  .charCreation {
+    position: relative;
+    height: 575px;
+    padding-left: 200px;
+  
+    .character {
+      margin: 0;
+      margin-bottom: 30px;
+    }
+
+    form {
+      flex-direction: column;
+      width: 150px;
+      border: 0;
+      margin: 0;
+
+      input {margin: 0; width: 100%; text-align: center;}
+      input, label {margin-bottom: 5px;}
+      label {border-bottom: 1px solid $color4;}
+      button {
+        display: block;
+      }
+    }
+  }
+
+  .FeaturesSelection {
+    position: absolute;
+    top: calc(100% - 20px);
+    left: 40px;
+    border-radius: 0 0 1em 0;
+    transform-origin: left top;
+    transform: rotate(-90deg);
+
+    .featureButton{transform: rotate(90deg);}
+  }
+}
+
+@media (max-width: 390px) {
+  .FeaturesSelection {left: 30px;}
+
+  .charCreation {
+    padding: 0;
+    padding-right: 5px;
+    .character, form {align-self: flex-end;}
+  }
+}

@@ -5,8 +5,6 @@ import NewestCharacters from './NewestCharacters.js'
 import firebase from './firebase.js'
 import './style/style.css'
 
-import FadeIn from 'react-fade-in'
-
 class App extends Component {
   constructor() {
     super();
@@ -140,27 +138,24 @@ class App extends Component {
             />
             <div className="grass"></div>
 
-            <FadeIn>
-              <form action="" onSubmit={this.handleSubmit}>
-                <label htmlFor="characterName">Name:</label>
-                <input 
-                  type="text" 
-                  id="characterName"
-                  placeholder="display name"
-                  value ={this.state.userCharacterName}
-                  onChange={this.handleNameInput} 
-                />
-                <button className="button">Create</button>
-              </form>
-            </FadeIn>
-
-            <FadeIn>
-              <FeaturesSelection 
-                selectedFeatureArray={featuresToShowCss} 
-                changeFeatureFunction={this.changeFeature}
-                featureNavClickFunction={this.handleFeatureNavClick}
+            <form action="" onSubmit={this.handleSubmit}>
+              <label htmlFor="characterName">Name:</label>
+              <input 
+                type="text" 
+                id="characterName"
+                placeholder="display name"
+                value ={this.state.userCharacterName}
+                onChange={this.handleNameInput} 
               />
-            </FadeIn>
+              <button className="button">Create</button>
+            </form>
+
+            <FeaturesSelection 
+              selectedFeatureArray={featuresToShowCss} 
+              changeFeatureFunction={this.changeFeature}
+              featureNavClickFunction={this.handleFeatureNavClick}
+            />
+
           </section>
 
           <section className="newestCharacters">
