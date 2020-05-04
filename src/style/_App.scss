@@ -1,9 +1,11 @@
+:focus {outline: 5px solid $color3;}
 body {background: lighten($color4, 10%);}
 
 button {
   padding: 0;
   border: none;
   background: none;
+  &:focus {outline: 5px solid $color3;}
 }
 
 .App {

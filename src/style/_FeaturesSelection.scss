@@ -9,8 +9,8 @@ $buttonMargin: 3px;
   border: 1px solid darken($color1, 25%);
   border-radius: 0 1em;
 
-  box-shadow: 2px 2px 0px darken($color1, 25%);
   background: lighten($color1, 20%);
+  box-shadow: 2px 2px 0px darken($color1, 25%);
 
   .featureButton {
     position: relative;
@@ -84,7 +84,7 @@ $buttonMargin: 3px;
       width: 13%;
       transform: translateX(-50%) scale(2);
 
-      &.mouth3 {top: 25%;}
+      &.mouth3 {top: 25%; width: 30%;}
       &.mouth4 {width: 24%;}
       &.mouth5 {width: 7%;}
     }

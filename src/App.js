@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Character from './Character.js'
 import FeaturesSelection from './FeaturesSelection.js'
-import NewestCharacters from './NewestCharacters.js'
+import CharacterCard from './CharacterCard.js'
 import firebase from './firebase.js'
 import './style/style.css'
 
@@ -158,12 +158,22 @@ class App extends Component {
 
           </section>
 
-          <section className="newestCharacters">
-              <NewestCharacters 
-                characterArray={characterArray}
-                handleCharacterListClick={this.handleCharacterListClick}  
-              />
+          <section className="CharacterCards">
+            <ul>
+              { // slice to set how many of the newest characters to show
+                characterArray.slice(0, 5).map((character) => {
+                  return (
+                    <CharacterCard
+                      key={character.charId}
+                      character={character}
+                      handleCharacterListClick={this.handleCharacterListClick}
+                    />
+                  )
+                })
+              }
+            </ul>
           </section>
+
         </div> {/* wrapper */}
 
         <footer>
