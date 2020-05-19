@@ -7,13 +7,13 @@ class CharacterCard extends Component {
     this.state = {cardAnimation: false}
   }
 
-  addAnimationClass = () => {
-    this.setState({cardAnimation: true})
-  }
-
   liOnClick = (e, character) => {
     this.addAnimationClass()
     this.props.handleCharacterListClick(character.charId)
+  }
+
+  addAnimationClass = () => {
+    this.setState({cardAnimation: true})
   }
 
   keyPressed = (e, eForClickFunction, character) => {
