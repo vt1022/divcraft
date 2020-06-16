@@ -1,11 +1,11 @@
-:focus {outline: 5px solid $color3;}
+// :focus {outline: 5px solid $color3;}
 body {background: lighten($color4, 10%);}
 
 button {
   padding: 0;
   border: none;
   background: none;
-  &:focus {outline: 5px solid $color3;}
+  // &:focus {outline: 5px solid $color3;}
 }
 
 .App {
@@ -121,7 +121,7 @@ ul {
     }
 
     input:focus {
-      box-shadow: 0px 3px 0 $color3;
+      box-shadow: 0px 2px 0 $color3;
     }
   }
 }

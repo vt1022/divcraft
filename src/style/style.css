@@ -250,10 +250,6 @@ html {
   overflow: hidden;
 }
 
-:focus {
-  outline: 5px solid #38618C;
-}
-
 body {
   background: #68bdff;
 }
@@ -262,10 +258,6 @@ button {
   padding: 0;
   border: none;
   background: none;
-}
-
-button:focus {
-  outline: 5px solid #38618C;
 }
 
 .App {
@@ -472,8 +464,8 @@ ul {
 }
 
 .charCreation form input:focus {
-  -webkit-box-shadow: 0px 3px 0 #38618C;
-          box-shadow: 0px 3px 0 #38618C;
+  -webkit-box-shadow: 0px 2px 0 #38618C;
+          box-shadow: 0px 2px 0 #38618C;
 }
 
 @-webkit-keyframes grass {
@@ -1600,7 +1592,7 @@ footer a:focus {
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 374px) {
   .FeaturesSelection {
     left: 30px;
   }
