@@ -1,6 +1,6 @@
 ## DivCraft
 
-Character creation screen of a game. Made with React and Firebase. One div style css drawings and animations.
+Character creation screen of a game. Made with React and Firebase. Single div style css drawings and animations.
 
 * React
 * Firebase
