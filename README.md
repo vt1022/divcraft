@@ -9,4 +9,4 @@ Character creation screen of a game. Made with React and Firebase. One div style
 * sass
 * Responsive Design
 
-![GIF of DivCraft](https://i.imgur.com/e8iASdT.gifv)
+![GIF of DivCraft](https://i.imgur.com/e8iASdT.gif)
