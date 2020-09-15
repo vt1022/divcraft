@@ -260,6 +260,10 @@ button {
   background: none;
 }
 
+button:focus {
+  outline: none;
+}
+
 .App {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -461,10 +465,6 @@ ul {
 
 .charCreation form button:hover {
   border: 1px solid #f6f6f6;
-}
-
-.charCreation form button:focus {
-  outline: none;
 }
 
 .charCreation form input:focus {
