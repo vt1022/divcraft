@@ -147,7 +147,7 @@ class App extends Component {
                 value ={this.state.userCharacterName}
                 onChange={this.handleNameInput} 
               />
-              <button className="button">Create</button>
+              <button className="button">Save</button>
             </form>
 
             <FeaturesSelection 
